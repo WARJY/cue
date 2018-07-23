@@ -1,0 +1,107 @@
+.full {
+  width: 100%;
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mask {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.log-type {
+  width: 500rpx;
+  background-color: #fff;
+  padding: 60rpx 40rpx 40rpx 40rpx;
+  border-radius: 4rpx;
+  box-shadow: 0 0 10rpx #ddd;
+  z-index: 30;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+}
+
+.btn-close {
+  position: absolute;
+  font-size: 40rpx;
+  top: 10rpx;
+  right: 20rpx;
+  color: #999;
+}
+
+.type-btn {
+  padding: 20rpx;
+  background-color: #00ae66;
+  border-radius: 10rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 30rpx;
+  margin: 20rpx;
+}
+
+.login-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 21;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-panel .logo {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 40rpx
+}
+
+.btn.log{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx 40rpx;
+  border-radius: 10rpx;
+  background-color: #f7f7f7;
+  margin-top: 20rpx
+}
+
+.bg-green{
+  background-color: #31c27c !important;
+  color:#fff;
+}
+
+.btn.log .icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.btn.log .text{
+  flex: 1;
+  margin-left: 20rpx;
+}

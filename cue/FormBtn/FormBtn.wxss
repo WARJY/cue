@@ -1,0 +1,59 @@
+/* Matrix_Wx/FormBtn/FormBtn.wxss */
+
+.form-btn {
+  text-align: center;
+}
+
+.formBtnDefault {
+  background: #31365c;
+  color: #fff;
+  margin: 20rpx;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  text-align: center;
+}
+
+.formBtnBottom {
+  background: #31365c;
+  color: #fff;
+  padding: 20rpx;
+  text-align: center;
+  margin: 20rpx;
+  border-radius: 10rpx;
+}
+
+/* 
+.formBtnBottomGroup { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #31365c;
+  color: #fff;
+}
+
+.formBtnBottomGroup  .btn-box {
+  flex-grow: 1;
+  height: 88rpx;
+  line-height: 88rpx;
+  position: relative;
+}
+
+.btn-row-2 .btn-box:last-child {
+  flex-grow: 2;
+  background: #34a1eb;
+}
+
+.formBtnBottomGroup.btn-row-3 .btn-box:nth-child(2)::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 20rpx;
+  width: 1px;
+  bottom: 20rpx;
+  border-left: 1px solid #eee;
+  color: #eee;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+} */

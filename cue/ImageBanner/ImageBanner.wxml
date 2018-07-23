@@ -1,0 +1,10 @@
+<!--Matrix_Wx/Banner/Banner.wxml-->
+<swiper indicator-dots="{{currentTheme.indicatorDots}}" autoplay="{{currentTheme.autoplay}}" interval="{{currentTheme.interval}}" duration="{{currentTheme.duration}}" style='height:{{height}}rpx'>
+  <block wx:for="{{value}}" wx:item="item" wx:key="id">
+    <swiper-item style="height:{{height}}rpx">
+      <view class='swiper-item'>
+        <image src='{{item.Image}}' mode='widthFix' style='width:{{currentTheme.imageWidth}}rpx;height:{{height}}rpx'></image>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>

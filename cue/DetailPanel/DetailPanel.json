@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "NewsDetail": "/Matrix_Wx/DetailPanel/NewsDetail/NewsDetail",
+    "ProductDetail": "/Matrix_Wx/DetailPanel/ProductDetailPanel/ProductDetailPanel",
+    "InfoDetail": "/Matrix_Wx/DetailPanel/InfoDetail/InfoDetail",
+    "Member": "/Matrix_Wx/DetailPanel/MemberDetail/MemberDetail"
+  }
+}

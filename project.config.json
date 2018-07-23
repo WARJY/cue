@@ -1,0 +1,61 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.94",
+	"appid": "touristappid",
+	"projectname": "cue",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": 0,
+					"name": "page",
+					"pathName": "demo/page/page",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "accountPanel",
+					"pathName": "demo/accountPanel/accountPanel",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "input",
+					"pathName": "demo/input/input",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "form",
+					"pathName": "demo/form/form",
+					"query": ""
+				}
+			]
+		}
+	}
+}

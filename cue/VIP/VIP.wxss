@@ -1,0 +1,171 @@
+.check {
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.check>view {
+  width: 100%;
+  text-align: center;
+}
+
+.check .logo {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  background-color: #eee;
+}
+
+.check .logo image {
+  width: 70%;
+  height: 70%;
+}
+
+.check .title {
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  color: #000;
+}
+
+.check .content {
+  font-size: 24rpx;
+  color: #666;
+  padding: 0 60rpx;
+  margin-top: 20rpx;
+}
+
+.check .tip {
+  font-size: 26rpx;
+  color: red;
+  margin-top: 20rpx;
+}
+
+.check .btn {
+  width: 300rpx;
+  margin: 0 auto;
+  font-size: 26rpx;
+  color: #f1c528;
+  margin-top: 20rpx;
+  border: solid 1rpx #f1c528;
+  border-radius: 50rpx;
+  padding: 20rpx 0;
+  background-color: #fff
+}
+
+.buy {
+  padding: 20rpx;
+  align-items: flex-start;
+}
+
+.buy .img {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx 10rpx;
+}
+
+.buy .title {
+  margin-left: 20rpx;
+  color: #000;
+}
+
+.buy .content {
+  color: #666;
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+
+.buy .sale {
+  color: #666;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+
+.set {
+  padding: 40rpx;
+  margin-top: 20rpx;
+  border-top: solid 1rpx #eee;
+}
+
+.set .title {
+  font-size: 32rpx;
+}
+
+.set .set-box {
+  margin-top: 40rpx;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.set .set-item {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  color: #fff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+}
+
+.set .set-item .item {
+  background-color: #ccc;
+  font-size: 24rpx;
+  padding: 15rpx 0;
+  border-radius: 10rpx;
+}
+
+.set .set-item .item.active {
+  background-color: #04adf6;
+}
+
+.pay {
+  width: 100%;
+  height: 100rpx;
+  border-top: solid 1rpx #eee;
+  position: fixed;
+  bottom: 0;
+  font-size: 28rpx;
+}
+
+.pay .price {
+  padding-left: 30rpx;
+  color: #333;
+}
+
+.pay .price .green {
+  color: #00ae66;
+}
+
+.pay .btn {
+  background-color: #f1c528;
+  color: #fff;
+  width: 200rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 0;
+  font-size: 28rpx
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-item {
+  flex: 1;
+}

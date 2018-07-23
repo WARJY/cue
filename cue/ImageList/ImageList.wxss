@@ -1,0 +1,14 @@
+/* Matrix_Wx/ImageList/ImageList.wxss */
+
+.flex-row, .flex-column {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}

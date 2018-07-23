@@ -1,0 +1,6 @@
+<!--Matrix_Wx/ImageList/ImageList.wxml-->
+<view class='{{currentTheme.className}}' style='flex-wrap:wrap;'>
+  <view wx:for="{{value}}" wx:key="*this" wx:item="{{item}}">
+    <image src='{{item.Image}}' style='width:{{imageWidth}}rpx;' mode='widthFix'></image>
+  </view>
+</view>

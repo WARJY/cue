@@ -1,0 +1,24 @@
+<view wx:if='{{showLogin === true}}'>
+  <view class='mask' bindtap='_close'></view>
+  <view class='log-type' style='' wx:if="{{!showInfo}}">
+    <view class='btn-close' bindtap='_close'>×</view>
+    <view class='title'>请选择登录/注册方式</view>
+    <button wx:if="{{wxLog}}" class="btn log" style='background-color:{{color}};color:#fff' open-type='getPhoneNumber' bindgetphonenumber='_getPhoneNumber'>
+      <image class='icon' src='wx-white.png'></image>
+      <view class='text'>{{wxLog}}</view>
+    </button>
+    <button wx:for="{{logType}}" class="btn log" wx:key="{{index}}" data-item="{{item}}" bindtap='_handleLink'>
+      <image class='icon' src='{{item.icon}}'></image>
+      <view class='text'>{{item.text}}</view>
+    </button>
+  </view>
+  <view class='login-panel' wx:if="{{showInfo}}">
+    <view>
+      <image src='{{logoUrl}}' class='logo'></image>
+      <button class="btn log" style='background-color:{{color}};color:#fff' open-type='getUserInfo' bindgetuserinfo='_getUserInfo'>
+        <image class='icon' src='wx-white.png'></image>
+        <view class='text'>获取微信授权</view>
+      </button>
+    </view>
+  </view>
+</view>

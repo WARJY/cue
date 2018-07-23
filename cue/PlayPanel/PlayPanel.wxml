@@ -1,0 +1,37 @@
+<view class='container' style='z-index:3;background:#31365c;opactiy:0' catchtouchmove='true'>
+  <view class='' style='text-align:center;padding-top:200rpx;padding-bottom:20rpx; z-index:1'>
+    <view style='height:465rpx;overflow:hidden;'>
+      <image src='{{image}}' style='max-width:349rpx;min-width:349rpx;margin:0 auto;'></image>
+    </view>
+    <view style='margin-top:40rpx;;'>{{music.Title}}</view>
+    <view class='flex-row' style='color:#bbbbbb;margin-top:30rpx;'>
+      <view class='w100' style='color:#fff'>{{currentPlayTime}}</view>
+      <progress percent='{{audioPress}}' stroke-width='5' class='flex-1' backgroundColor='#000' activeColor='#ffa42f'></progress>
+      <view class='w100' style='color:#fff'>{{audioLen}}</view>
+    </view>
+  </view>
+  <view class='flex-row play-btn-panel' style='color:#666666;margin-top:40rpx;'>
+    <view style='flex-grow:1;text-align:center;background:none;width:40rpx;' >
+      <button open-type='share'><i class='qian q-share' style='font-size:48rpx'></i></button>
+      
+    </view>
+    <view style='flex-grow:1;text-align:center;background:none;' bindtap='goPrev'>
+      <i class='qian q-prev' style='font-size:100rpx'></i>
+    </view>
+    <view style='flex-grow:2;text-align:center;background:none;' bindtap='goPause' wx:if="{{playing}}">
+      <i class='qian q-pause' style='font-size:148rpx'></i>
+    </view>
+    <view style='flex-grow:2;text-align:center;background:none;' bindtap='goPlay' wx:if="{{!playing}}">
+      <i class='qian q-play' style='font-size:148rpx'></i>
+    </view>
+    <view style='flex-grow:1;text-align:center;background:none;' bindtap='goNext'>
+      <i class='qian q-next' style='font-size:100rpx'></i>
+    </view>
+    <view style='flex-grow:1;text-align:center;background:none' bindtap='goList'>
+      <i class='qian q-list' style='font-size:48rpx'></i>
+    </view>
+  </view>
+</view>
+<!-- <view class='play-bg' style='background-image:url({{image}});z-index:0;height:100vh;'></view> -->
+
+<sheet value="{{musicList}}" flag="{{showList}}" bindgopage='onSelectItem'  title='播放列表'/>

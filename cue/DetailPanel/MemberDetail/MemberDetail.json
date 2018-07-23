@@ -1,0 +1,12 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ToolButton": "/Matrix_Wx/ToolButton/ToolButton",
+    "UserPanel": "/Matrix_Wx/UserPanel/UserPanel",
+    "Panel": "/Matrix_Wx/Panel2/Panel2",
+    "BtnPanel": "/Matrix_Wx/BtnPanel/BtnPanel",
+    "FormBtn": "/Matrix_Wx/FormBtn/FormBtn",
+    "MButton": "/Matrix_Wx/Button/Button",
+    "InputModal": "/Matrix_Wx/inputModal/inputModal"
+  }
+}

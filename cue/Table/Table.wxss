@@ -1,0 +1,81 @@
+/* Matrix_Wx/Table/Table.wxss */
+
+.f12 {
+  font-size: 24rpx;
+}
+
+.f14 {
+  font-size: 28rpx;
+}
+
+.f16 {
+  font-size: 32rpx;
+}
+
+.flex-row, .flex-column {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-border {
+  position: relative;
+}
+
+.flex-row-border::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px dashed #fff;
+  color: #fff;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.flex-row.flex-row-border:last-child:after {
+  display: none;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.w150 {
+  width: 150rpx;
+}
+
+.w200 {
+  width: 200rpx;
+}
+
+.row-2-f12 {
+  font-size: 24rpx;
+  height: 72rpx;
+  overflow: hidden;
+  line-height: 3;
+  text-align: center;
+}
+
+.row-1-f12 {
+  font-size: 24rpx;
+  height: 36rpx;
+  overflow: hidden;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.row-1-f14 {
+  font-size: 28rpx;
+  height: 36rpx;
+  overflow: hidden;
+  line-height: 1.5;
+  text-align: center;
+}

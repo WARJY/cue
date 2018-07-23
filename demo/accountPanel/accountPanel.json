@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Page": "/cue/Page/Page",
+    "AccountPanel": "/cue/AccountPanel/AccountPanel"
+  },
+  "navigationBarTitleText": "AccountPanel"
+}

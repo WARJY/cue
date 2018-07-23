@@ -1,0 +1,129 @@
+<view wx:if="{{title}}" class="input-title">{{title}}</view>
+
+<view wx:if="{{type=='code'}}" class="input-box input-box-code {{className}}">
+  <view wx:if="{{label.length>0}}" class="input-hd">
+    <view class="input-label">{{label}}</view>
+  </view>
+  <view class="input-bd">
+    <input class="input-input" type="tel" placeholder="{{placeholder}}" placeholder-class="placeholder" data-name="{{name}}" bindinput="_inputChange" />
+  </view>
+  <view class="input-ft">
+    <view wx:if="{{!isSend}}" class="input-code-btn" bindtap='_sendCode'>{{btn}}</view>
+    <view wx:else class="input-code-btn">{{timeOut}}</view>
+  </view>
+</view>
+
+<view wx:if="{{type=='text'}}" class="input-box {{className}}">
+  <view wx:if="{{label.length>0}}" class="input-hd">
+    <view class="input-label">{{label}}</view>
+  </view>
+  <view class="input-bd">
+    <input class="input-input" type="text" value="{{value}}" placeholder="{{placeholder}}" placeholder-class="placeholder" data-name="{{name}}" bindinput="_inputChange" disabled='{{disabled}}' />
+  </view>
+</view>
+
+<view wx:if="{{type=='number'}}" class="input-box {{className}}">
+  <view wx:if="{{label.length>0}}" class="input-hd">
+    <view class="input-label">{{label}}</view>
+  </view>
+  <view class="input-bd">
+    <input class="input-input" type="number" value="{{value}}" placeholder="{{placeholder}}" placeholder-class="placeholder" data-name="{{name}}" bindinput="_inputChange" disabled='{{disabled}}' />
+  </view>
+</view>
+
+<view wx:if="{{type=='money'}}" class='recharge' >
+  <view class='title'>{{label}}</view>
+  <view style='position:relative'>
+    <view class='unit'>¥</view>
+    <input class='input' type='number' value='{{value}}' placeholder='{{placeholder}}' placeholder-class='pl-input' data-name="{{name}}" bindinput="_inputChange" disabled='{{disabled}}'></input>
+  </view>
+</view>
+
+
+<view wx:if="{{type=='password'}}" class="input-box {{className}}">
+  <view wx:if="{{label.length>0}}" class="input-hd">
+    <view class="input-label">{{label}}</view>
+  </view>
+  <view class="input-bd">
+    <input class="input-input" type='password' placeholder="{{placeholder}}" placeholder-class="placeholder" data-name="{{name}}" bindinput="_inputChange" disabled='{{disabled}}' />
+  </view>
+</view>
+
+<view wx:if="{{type=='phone'}}" class="input-box {{className}}">
+  <view class="input-hd">
+    <view class="input-qh">+86</view>
+  </view>
+  <view class="input-bd">
+    <input class="input-input" type="number" placeholder="{{placeholder}}" placeholder-class="placeholder" data-name="{{name}}" bindinput="_inputChange" disabled='{{disabled}}' maxlength='11' />
+  </view>
+</view>
+
+<view wx:if="{{type=='section'}}" class="input-box {{className}}">
+  <view wx:if="{{label.length>0}}" class="input-hd">
+    <view class="input-label">{{label}}</view>
+  </view>
+  <picker data-name="{{name}}" range='{{array}}' bindchange="_bindSectionChange" class='input-bd'>
+    <view class="picker">
+      <input class="input-input" disabled='true' type="text" value='{{array[value]}}' placeholder="{{placeholder}}" placeholder-class="placeholder" bindinput="_inputChange" disabled='{{true}}' />
+    </view>
+  </picker>
+</view>
+
+<view wx:if="{{type=='city'}}" class="input-box {{className}}">
+  <view wx:if="{{label.length>0}}" class="input-hd">
+    <view class="input-label">{{label}}</view>
+  </view>
+  <picker mode="region" data-name="{{name}}" custom-item="{{customItem}}" bindchange="_bindPickerChange" class='input-bd'>
+    <view class="picker">
+      <input class="input-input" disabled='true' type="text" value='{{value}}' placeholder="{{placeholder}}" placeholder-class="placeholder" bindinput="_inputChange" disabled='{{true}}' />
+    </view>
+  </picker>
+</view>
+
+<view wx:if="{{type=='date'}}" class="input-box {{className}}">
+  <view wx:if="{{label.length>0}}" class="input-hd">
+    <view class="input-label">{{label}}</view>
+  </view>
+  <picker mode="date" data-name="{{name}}" start="{{start}}" end="{{end}}" bindchange="_bindPickerChange" class='input-bd'>
+    <view class="picker">
+      <input class="input-input" disabled='true' type="text" value="{{value}}" placeholder="{{placeholder}}" placeholder-class="placeholder" bindinput="_inputChange" disabled='{{true}}' />
+    </view>
+  </picker>
+</view>
+
+<view wx:if="{{type=='textArea'&&!SearchOn}}" class='input-box {{className}}'>
+  <view wx:if="{{label.length>0}}" class="input-hd">
+    <view class="input-label">{{label}}</view>
+  </view>
+  <view class="input-bd">
+    <textarea class='input-area' maxlength="{{maxLength}}" value="{{value}}" placeholder="{{placeholder}}" placeholder-class="placeholder" data-name="{{name}}" bindinput="_inputChange" />
+    <text class='count'>{{count}}/{{maxLength}}</text>
+  </view>
+</view>
+
+<view wx:if="{{type=='search'&&!SearchOn}}" class="input-box {{className}}">
+  <view wx:if="{{label.length>0}}" class="input-hd">
+    <view class="input-label">{{label}}</view>
+  </view>
+  <view class="input-bd">
+    <input class="input-input" type="text" value="{{value}}" placeholder="{{placeholder}}" placeholder-class="placeholder" data-name="{{name}}" disabled='{{true}}' bindtap='_handeleSearchOn' />
+  </view>
+</view>
+<view wx:if="{{type=='search'&&SearchOn}}" class='page' catchtouchmove='true'>
+  <Search className="nav" value="{{value}}" searchOn="{{SearchOn}}" cancle="取消" searchDetail="true" bind:keywordsInput="_handleKeywords" bind:goListByKey="_handleSearch" matchingItems="{{matchingItems}}" load="{{load}}" bind:searchOff="_handleSearchOff" />
+</view>
+
+<view wx:if="{{type=='select'&&!SearchOn}}" class="input-box {{className}}">
+  <view wx:if="{{label.length>0}}" class="input-hd">
+    <view class="input-label">{{label}}</view>
+  </view>
+  <view class="input-bd">
+    <input class="input-input" type="text" value="{{value.Name}}" placeholder="{{placeholder}}" placeholder-class="placeholder" data-name="{{name}}" disabled='{{true}}' bindtap='_handeleSearchOn' />
+  </view>
+  <view class='input-ft'>
+    <i class='bd bd-arrow'></i>
+  </view>
+</view>
+<view wx:if="{{type=='select'&&SearchOn}}" class='page select' catchtouchmove='true' bindtap='_close'>
+  <view wx:for="{{selects}}" class='select-item {{item.Id===value.Id?"active":""}}' wx:key="Id" data-item="{{item}}" bindtap='_handleSelect'>{{item.Name}}</view>
+</view>

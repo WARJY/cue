@@ -1,0 +1,14 @@
+/* Matrix_Wx/ShareBtn/ShareBtn.wxss */
+.btn-share{padding:25rpx;background:orange}
+.btn-share-bottom, .btn-share {
+  background: orange;
+  color: #fff;
+}
+.btn-share {
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+
+.btn-share-bottom {
+  padding: 25rpx;
+}

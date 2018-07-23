@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "CInput": "/cue/Input/Input",
+    "Page": "/cue/Page/Page"
+  },
+  "navigationBarTitleText": "Input"
+}

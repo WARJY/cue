@@ -1,0 +1,3 @@
+<view class='html'>
+  <rich-text nodes="{{nodes}}" style='line-height:2;text-indent:0;padding-top:40rpx;text-align:left;color:#686868'></rich-text>
+</view>

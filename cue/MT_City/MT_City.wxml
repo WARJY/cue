@@ -1,0 +1,34 @@
+<block wx:if="{{cityOn}}">
+  <view class="searchLetter touchClass">
+    <view wx:for="{{searchLetter}}" style="height:{{itemH}}px" wx:key="index" data-letter="{{item.name}}" catchtouchstart="searchStart" catchtouchmove="searchMove" catchtouchend="searchEnd">{{item.name}}
+    </view>
+  </view>
+  <scroll-view class='section-box {{className}}' scroll-y="true" style="height:{{winHeight}}px" bindscroll="bindScroll" scroll-into-view="{{showLetter}}">
+    <view class="selection" wx:for="{{cityList}}" wx:key="{{item.initial}}" id="{{item.initial}}">
+      <block wx:if="{{index===0}}">
+        <block wx:if="{{cityArr.length&&historyOn}}">
+          <view style="margin-left: 15px">
+            <text class="hor">历史访问</text>
+            <view>
+              <block wx:for="{{cityArr}}" wx:for-item="item">
+                <view class="kuai" data-id="{{item.id}}" data-text="{{item.city}}" bindtap="wxSortPickerViewItemTap">{{item.city}}</view>
+              </block>
+            </view>
+          </view>
+        </block>
+        <view wx:if="{{hotCity}}" style="margin-left: 15px;margin-bottom: 15px">
+          <text class="hor">国内热门城市</text>
+          <view>
+            <block wx:for="{{hotCity}}" wx:key="id" for-item="item">
+              <view class="kuai" data-id="{{item.id}}" data-text="{{item.city}}" bindtap="wxSortPickerViewItemTap">{{item.city}}</view>
+            </block>
+          </view>
+        </view>
+      </block>
+      <view class="item_letter">{{item.initial}}</view>
+      <view class="item_city" wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.id}}" wx:for-index="idx" data-id="{{ct.id}}" data-text="{{ct.city}}" bindtap="wxSortPickerViewItemTap">
+        {{ct.city}}
+      </view>
+    </view>
+  </scroll-view>
+</block>

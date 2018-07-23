@@ -1,0 +1,42 @@
+/* Matrix_Wx/ProductDetailPanel/ProductDetailPanel.wxss */
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+ .row-1,.row-2,.row-3{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+} 
+ 
+.row-1 {
+  -webkit-line-clamp: 1;
+  line-height: 1;
+}
+.row-2 {
+  -webkit-line-clamp: 2;
+  line-height: 1.5;
+}
+.row-3 {
+-webkit-line-clamp:3;
+  line-height: 1.5;
+}
+.product-detail-panel{position: relative}
+.product-detail-panel::after{  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #e5e5e5;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);}

@@ -1,0 +1,13 @@
+<!-- 
+Page
+整个页面的容器组件，组件下的子节点全部传入匿名slot
+
+@properties
+  isShow(Boolean)    是否显示page（默认false，数据加载完毕后再setData）
+@bind
+  scroll    监听scroll事件（模拟器滚轮滑动无法监听），scrollTop通过e.detail.scrollTop获取
+-->
+
+<Page isShow="{{isShow}}" bind:scroll="handleScroll">
+  <view class='title'>加载完成后可以看到我</view>
+</Page>

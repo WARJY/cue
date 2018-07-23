@@ -1,0 +1,15 @@
+<Page isShow="{{true}}">
+  <view style='background-color:#fff;padding:20rpx'>
+    <CInput type="text" label="姓名" placeholder="输入您的姓名" name="Name" value="gcc" bind:MInput="handleInput" title="登录" />
+    <CInput type="number" label="年龄" placeholder="输入您的年龄" name="Age" bind:MInput="handleInput" />
+    <CInput type="password" label="密码" placeholder="输入密码" name="PassWord" bind:MInput="handleInput" />
+    <CInput type="code" label="验证码" placeholder="输入验证码" name="Code" bind:MInput="handleInput" bind:sendCode="handleCode" />
+    <CInput type="section" label="性别" placeholder="请选择" name="Male" bind:MInput="handleInput" array="{{maleArray}}" />
+    <CInput type="city" label="城市" placeholder="请选择" name="City" bind:MInput="handleInput" />
+    <CInput type="date" label="时间" placeholder="请选择" name="Date" bind:MInput="handleInput" />
+    <CInput type="search" label="学校" placeholder="请选择" name="School" bind:MInput="handleInput" bind:search="handleSearch" />
+    <CInput type="select" label="行业" placeholder="请选择" name="Trade" bind:MInput="handleInput" bind:select="handleSelect" selects="{{selects}}" />
+    <CInput type="textArea" title="描述" placeholder="请输入" name="Date" bind:MInput="handleInput" maxLength="20" />
+    <CInput type="money" label="充值" placeholder="输入充值金额" name="Recharge" bind:MInput="handleInput"  />
+  </view>
+</Page>

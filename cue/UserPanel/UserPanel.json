@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Panel": "/Matrix_Wx/Panel2/Panel2"
+   
+  }
+}

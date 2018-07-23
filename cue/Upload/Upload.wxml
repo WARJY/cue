@@ -1,0 +1,70 @@
+<!--Matrix_Wx/Upload/Upload.wxml-->
+<block wx:if="{{type=='default'}}">
+  <view class='flex-row form-item-upload' style='height: 88rpx;  line-height: 88rpx;padding:0 30rpx;'>
+    <view style='flex-grow:1;'>{{title}}</view>
+    <view>可选择:{{fields.length}}张 已选择:{{ImgList.length}}张</view>
+  </view>
+  <view class="flex-row" style='flex-wrap:wrap;background:#fff;'>
+    <view wx:if="{{ fields.length>1}}" class="flex-row" style='flex-wrap:wrap;'>
+      <view class='img-box' wx:for="{{ImgList}}" wx:key="Id">
+        <view wx:if="{{!successList[index]}}" class='mask'>
+          <view class='text'>上传中</view>
+        </view>
+        <image src='{{item}}' mode='aspectFill' bindtap='_changeImg' data-index="{{index}}">
+          <i class='qian q-add'></i>
+        </image>
+      </view>
+      <view wx:if="{{ImgList.length<fields.length }}" class='upload-btn' bindtap='_chooseImg'>
+        
+          <image src='camear.png'></image>
+  
+    
+      </view>
+    </view>
+    <view wx:if="{{ fields.length===1}}">
+      <view class='uploading-img' wx:key="{{index}}" wx:for="{{ImgList}}" wx:item="item">
+        <view wx:if="{{!successList[index]}}" class='mask'>
+          <view class='text'>上传中</view>
+        </view>
+        <image src='{{item}}' mode='aspectFill' bindtap='_changeImg' data-index="{{index}}">
+          <i class='bd  bd-edit'></i>
+        </image>
+      </view>
+
+
+      <view wx:if="{{ImgList.length<fields.length  }}" class='upload-box'>
+        <view class='upload-img' bindtap='_chooseImg'>
+          <image mode='aspectFill' src="{{uploadImg || 'user_card.png'}}"></image>
+        </view>
+        <view class='upload-desc'>
+          {{uploadDesc}}
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<view class='page page-full' wx:if="{{type=='full'}}">
+  <view class='upload'>
+    <view class='upload-item title'>
+      {{title}}
+    </view>
+    <view class='upload-box'>
+      <!--已上传-->
+      <view class='uploading-img' wx:for="{{ImgList}}" wx:item="item">
+        <view wx:if="{{!successList[index]}}" class='mask'>
+          <view class='text'>上传中</view>
+        </view>
+        <image src='{{item}}' mode='aspectFill' bindtap='_changeImg' data-index="{{index}}">
+          <i class='bd  bd-edit'></i>
+        </image>
+      </view>
+      <!--未上传-->
+      <view class='upload-img' wx:if="{{ImgList.length<fields.length}}" bindtap='_chooseImg'>
+        <image src="{{uploadImg || 'user_card.png'}}"></image>
+      </view>
+    </view>
+    <view class='upload-desc'>
+      {{uploadDesc}}
+    </view>
+  </view>
+</view>

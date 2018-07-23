@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "HtmlPanel": "/Matrix_Wx/HtmlPanel/HtmlPanel"
+  }
+}

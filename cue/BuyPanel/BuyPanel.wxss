@@ -1,0 +1,15 @@
+/* Matrix_Wx/ButtonBuy/ButtonBuy.wxss */
+
+.btn-pay-bottom, .btn-pay {
+  background: #31365c;
+  color: #fff;
+}
+
+.btn-pay {
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+
+.btn-pay-bottom {
+  padding: 25rpx;
+}

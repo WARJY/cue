@@ -1,0 +1,11 @@
+/* Matrix_Wx/MT_Form/MT_Form.wxss */
+.cells{
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+
+.page{
+  width: 100%;
+  min-height: calc(100vh - 86px)
+}
+button::after{display: none;}

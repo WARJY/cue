@@ -1,0 +1,11 @@
+<view class='modal-box' wx:if="{{modalOn}}">
+  <view class='mask' bindtap='_close'></view>
+  <view class='content' catchtouchmove="true">
+    <view class='title'>{{title}}</view>
+    <textarea type='text' placeholder='{{placeholder}}' placeholder-class='placeholder' bindinput='_input' value='{{input}}'></textarea>
+    <view class='btn-box'>
+      <view class='btn' style='border-right:solid 1rpx #eee' bindtap='_close'>取消</view>
+      <view class='btn' style='color:#31c27c' bindtap='_commit'>{{commit_text}}</view>
+    </view>
+  </view>
+</view>

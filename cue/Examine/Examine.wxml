@@ -1,0 +1,20 @@
+ <view wx:if="{{!showForm}}" class='page flex check' style='background-color:#fff;padding-top:100rpx;'>
+  <view class='logo flex'>
+    <image src='{{image}}'></image>
+  </view>
+  <view class='title'>{{title}}</view>
+  <view class='content'>{{description}}</view>
+  <view class='content' wx:if='reason && state===2' style='color:red'>{{reason}}</view>
+  <view>
+    <view wx:if="{{state===0}}" class='btn' bindtap='handleInternetMedia' bindtap='_handleCheck'>立即认证</view>
+    <view wx:if="{{state===3}}" class='btn'>
+      <view wx:if="{{showstate}}" bindtap='setShowState'>熄灭图标</view>
+      <view wx:if="{{!showstate}}" bindtap='setShowState'>点亮图标</view>
+    </view>
+    <view wx:if="{{state===1}}" class='btn' style='border:0'>审核中</view>
+    <view wx:if="{{state===2}}" class='btn' bindtap='handleInternetMedia' bindtap='_handleCheck'>重新认证</view>
+  </view>
+</view>
+<view wx:if="{{showForm}}" class='page'>
+  <Form Items="{{Items}}" path="{{path}}" original="{{currentValue}}" params="{{params}}" commit_text="确定" bind:match="handleMatch" bind:formCommit="_handleCommit" />
+</view> 

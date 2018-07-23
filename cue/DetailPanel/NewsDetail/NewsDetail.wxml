@@ -1,0 +1,30 @@
+<view class='flex-column detail-block '>
+  <view class='container'>
+    <view class='detail-title flex-row'>
+      {{data.Title}}
+    </view>
+    <view class='detail-desc flex-row '>
+      <view> {{data.Author}}</view>
+      <view>{{data.PublishTime}}</view>
+    </view>
+    <view class='detail-sumary flex-row' wx:if="{{data.Summary}}">
+      {{data.Summary}}
+    </view>
+    <view class='detail-content flex-row detail-image  text-center' wx:if="{{showHtml}}">
+      <HtmlPanel clear-image="{{showImages}}" value="{{data.CurrentHtml.Text}}"></HtmlPanel>
+    </view>
+  </view>
+  <view class='container mt20'>
+    <slot></slot>
+  </view>
+  <view class='content' align='center' style='text-align:center' wx:if="{{showImages && data.Images!==undefined}}" bindtap='onShowImageList'>
+    <image src='{{data.Images[0]}}' mode="widthFix" style="max-width:750rpx;margin:0 auto;display:block"></image>
+    <text style='font-size:24rpx;'>点击图片可放大滑动浏览</text>
+  </view>
+  <view class='flex-row flex-row-left box-block' wx:if='{{showKeywords && data.Keywords && data.Keywords.length>0}}'>
+    热门推荐
+  </view>
+  <view class='flex-grids box-block' wx:if='{{showKeywords&& data.Keywords && data.Keywords.length>0}}'>
+    <view wx:for='{{data.Keywords}}' wx:item="item" style='font-size:32rpx;' class='flex-grid' bindtap='gotosearch' data-keywords="{{item}}" >{{item}}</view>
+  </view>
+</view>

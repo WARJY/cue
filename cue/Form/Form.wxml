@@ -1,0 +1,18 @@
+<form report-submit name='pushMsgFm' bindsubmit='_goCommit'>
+  <block wx:for="{{Items}}" wx:key="name">
+    <view wx:if="{{item.type!=='textArea' && item.type!=='upload'}}" class='cells' style='display:{{item.hidden?"none":"block"}}'>
+      <MInput title="{{item.title}}" maxLength="{{item.maxLength}}" type="{{item.type}}" label="{{item.label}}" placeholder="{{item.placeholder}}" name="{{item.name}}" array="{{item.array}}" value="{{data[item.name]}}" matchingItems="{{item.matchingItems}}"
+        bind:MInput='_handleInput' bind:search='_handleInput' bind:select="_handleInput" bind:SearchOn="_handleSearchOn" selects="{{selects[item.name]}}" bind:SearchOff="_handleSearchOff" />
+    </view>
+    <!-- 文字区域 -->
+    <MInput wx:elif="{{item.type==='textArea'&&!searchDetail}}" title="{{item.title}}" maxLength="{{item.maxLength}}" type="{{item.type}}" label="{{item.label}}" placeholder="{{item.placeholder}}" name="{{item.name}}" value="{{data[item.name]}}" bind:MInput='_handleInput'
+      bind:search='_handleInput'/>
+    <!-- 上传 -->
+    <upload wx:elif="{{item.type==='upload'}}" type="{{item.showType?item.showType:'default'}}" title="{{item.title||item.placeholder}}" path="{{path +'.upload'}}" fields="{{item.fields}}" bind:uploadOn="_handleUploadOn" bind:upload="_handleUpload" value="{{data[item.name]}}"
+      uploadImg="{{item.uploadImg}}" uploadDesc="{{item.uploadDesc}}" />
+  </block>
+  <view style='padding:40rpx;'>
+    <button type='primary' style='background-color:#31c27c;border-radius:0;' form-type='submit'>{{commit_text}}</button>
+    <button wx:if="{{cancle_text}}" type='default' bindtap='_goCancle' style='background-color:#31c27c;border-radius:0;'>{{cancle_text}}</button>
+  </view>
+</form>

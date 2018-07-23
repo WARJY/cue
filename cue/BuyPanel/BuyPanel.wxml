@@ -1,0 +1,6 @@
+<!--Matrix_Wx/FormBtn/FormBtn.wxml-->
+<view bindtap='OnTap' data-id='{{value.Id}}' data-name='{{name}}' wx:if="{{isshow}}" >
+  <view class='btn-box {{currentTheme.className}}' style='background:{{background}}'>
+  {{value.SaleTitle}}
+  </view>
+</view>

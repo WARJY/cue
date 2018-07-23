@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "sheet": "/Matrix_Wx/Sheet/Sheet",
+    "tabNav":"/Matrix_Wx/TabNav/TabNav"
+  }
+}

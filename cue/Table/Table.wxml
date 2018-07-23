@@ -1,0 +1,27 @@
+<!--Matrix_Wx/Table/Table.wxml-->
+<view class='flex-column' style='padding:0 15rpx; color:{{currentTheme.font_color}}'>
+
+  <view class='flex-row flex-row-border' wx:for="{{value}}" wx:item='{{item}}' style='padding:10rpx 0;background:{{item.Color}};'>
+    <view class='row-2-f12 w200'>
+      {{item.Title}}
+
+    </view>
+    <view class='row-2-f12 w150'>
+      {{item.Code}}
+
+    </view>
+    <view class='row-2-f12 w150'>
+      {{item.Title1}}
+    </view>
+    <view class='row-2-f12 w150'>
+      {{item.Title2}}
+    </view>
+    <view class='row-2-f12 w150'>
+      {{item.Title3}}
+    </view>
+    <view class='row-2-f12 w150'>
+      {{item.Title4}}
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<!--Matrix_Wx/CardList/CardList.wxml-->
+<view class='card-list' wx:for="{{value}}" wx:key="{{*this}}" style="background:{{currentTheme.background}}">
+  <view class='card-list-top' style='display:flex;' style="padding:{{currentTheme.padding_tb}}">
+    <view class='card-list-left' wx:if="{{item.Image!== undefine}}" style='width:{{imageWidth}}rpx;margin-right: {{ imageWidth >0 ?"20rpx":"0" }}'>
+      <image src="{{item.Image}}" style="width:88rpx;height:88rpx;"></image>
+    </view>
+    <view class='card-list-right flex-column' style='flex-grow:1; '>
+      <view class='card-list-top' style='color:{{currentTheme.font_color_dark}};font-size:{{currentTheme.font_size_top}};margin-left:{{currentTheme.margin_left}};margin-bottom:{{currentTheme.margin_bottom}}' wx:if="{{item.Title!==undefine||item.Title1!==undefine}}">
+        {{item.Title}} | {{item.Title1}}
+      </view>
+
+      <view class="card-list-bottom {{currentTheme.is_border_right == 1 ? 'border-right' : ''}}" style='display:flex;flex-direction:row;'>
+        <view wx:for="{{item.Items}}" wx:key="{{*this}}" wx:for-item='item2' class='flex-1' style="margin:{{currentTheme.margin}};text-align:{{currentTheme.text_align}}">
+          <view class='card-list-top' style='color:{{currentTheme.font_color_dark}};font-size:{{currentTheme.font_size_top}};'> {{item2.Title}}</view>
+          <view class='card-list-bottom' style='color:{{currentTheme.font_color_light}};font-size:{{currentTheme.font_size_bottom}};line-height:{{currentTheme.line_height}}'> {{item2.Content}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="card-list-botom show_border" style='text-align:center;' wx:if="{{currentTheme.is_border||item.State!=undefine}}">{{item.State}}</view>
+  <view class="card-list-botom" style='text-align:center;' wx:else>{{item.State}}</view>
+</view>
+<slot></slot>

@@ -1,0 +1,12 @@
+<!--Matrix_Wx/UserInfo/UserInfo.wxml-->
+<view class='container' style='background:{{currentTheme.background}};height:{{currentTheme.height}}rpx;color:{{currentTheme.font_color}};padding-top:{{currentTheme.padding_top}}' touchmove='false'>
+  <view class='flex-column' style='text-align:{{currentTheme.text_center}};'>
+    <view class='image' style='margin:0 auto'>
+      <open-data type="userAvatarUrl" style='width:100rpx;height:100rpx;overflow:hidden;display:block;border-radius:100%;margin:0 auto'></open-data>
+    </view>
+    <view style='margin-top:30rpx;'>
+      <open-data type="userNickName"></open-data>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,29 @@
+<view>
+  <view class='search-bar' style='{{searchOn?"background-color: #fff":""}}'>
+    <view wx:if="{{city&&searchOn}}" class='search-bar-hd' bindtap='_cityOn'>
+      <view class='btn-city'>{{defaultCity}}</view>
+      <image class='btn-down' src='images/xx.png'></image>
+    </view>
+    <view wx:if="{{searchOn&&cancle}}" class='search-bar-hd'>
+      <view class='btn-city' bindtap='_searchOff'>{{cancle}}</view>
+    </view>
+    <view class='search-bar-bd' bindtap='_searchOn'>
+      <input class='search-eara' placeholder='{{placeholder}}' value='{{keywords}}' confirm-type="{{confirm}}" bindinput='_keywordsInput' bindconfirm='_goConfirm' placeholder-class='{{searchOn?"search-placeholder-on":"search-placeholder"}}' />
+      <image class='{{searchOn?"btn-search-on":"btn-search"}}' src='images/search.png'></image>
+    </view>
+    <view wx:if="{{searchOn}}" class='search-bar-hd'>
+      <view class='btn-city' bindtap='_goList'>搜索</view>
+    </view>
+  </view>
+  <view wx:if="{{searchDetail}}" class='search-detail'>
+    <view wx:if="{{matchingItems}}" class='matching'>
+      <block wx:for="{{matchingItems}}" wx:key="*this" for-item="item">
+        <view class='matching-item' data-keywords="{{item.content}}" bindtap='_goList'>
+          <image class='matching-item-search' src='images/search.png'></image>
+          {{item.content}}
+        </view>
+      </block>
+    </view>
+  </view>
+  <slot wx:if='{{searched}}'></slot>
+</view>

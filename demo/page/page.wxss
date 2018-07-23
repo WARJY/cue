@@ -1,0 +1,5 @@
+.title{
+  text-align: center;
+  font-size: 32rpx;
+  margin-top: 20rpx
+}

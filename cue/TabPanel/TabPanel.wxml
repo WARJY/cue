@@ -1,0 +1,15 @@
+<view class='tab {{type}} {{currentTop>fixedTop?"fixed":""}}' style='height:{{height+"rpx"}};line-height:{{height+"rpx"}};top:{{currentTop>fixedTop?fixedTop + "rpx":""}}'>
+  <block wx:for="{{Items}}" wx:key="id" wx:item="item" wx:index="index">
+    <view class='{{currentTab==index?"tab-item active":"tab-item"}}' data-index="{{index}}"  data-item="{{item}}" bindtap='_handleTab'>
+      <view>{{item.title ||item.Title}}</view>
+    </view>
+  </block>
+</view>
+<view wx:if="{{currentTop>fixedTop}}" style='height:100rpx'></view>
+<swiper indicator-dots="{{indicatorDots}}" duration="{{500}}" current="{{currentTab}}" bindchange='_handelSwipe' style='height:calc(100vh - {{topheight}}rpx)'>
+  <block wx:for="{{Items}}" wx:key="id" wx:item="item" wx:index="index">
+    <swiper-item >
+      <slot name="{{index}}" id="{{'slot' + index}}"></slot>
+    </swiper-item>
+  </block>
+</swiper>
