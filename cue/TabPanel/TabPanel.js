@@ -13,7 +13,6 @@ Component({
     type:{type:String,value:"default"},
     defaultTab:{ type: Number, value:0 }, 
     height:{type: Number, value:100},
-    topheight:{type:Number,value:100},
     fixedTop: { type: Number, value: 0 },
     currentTop: { type: Number, value: null }
   },
@@ -32,8 +31,16 @@ Component({
     this.setData({
       currentTab: this.properties.defaultTab
     })
-    this.triggerEvent('switchTab', { index: this.properties.defaultTab, item: this.properties.Items[this.properties.defaultTab] }, {})
+    let query = wx.createSelectorQuery()
+    query.select('#slot' + this.properties.defaultTab).boundingClientRect()
+    query.selectViewport()
+    query.exec((res) => {
+      this.setData({
+        height: res[0].height
+      })
+    })
   },
+
   methods: {
     _handleTab:function(e){
       this.setData({
@@ -43,6 +50,15 @@ Component({
     _handelSwipe:function(e){
       this.setData({
         currentTab: e.detail.current
+      })
+      let query = wx.createSelectorQuery()
+      query.select('#slot0').boundingClientRect()
+      query.selectViewport()
+      query.exec((res)=>{
+        console.log(res[0].height)
+        this.setData({
+          height: res[0].height
+        })
       })
       this.triggerEvent('switchTab', { index: e.detail.current, item: this.properties.Items[e.detail.current] }, {})
     }

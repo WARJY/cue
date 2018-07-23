@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "InputModal":"/Matrix_Wx/inputModal/inputModal"
-  }
-}

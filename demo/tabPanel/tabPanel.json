@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "TabPanel": "/cue/TabPanel/TabPanel",
+    "Page": "/cue/Page/Page"
+  },
+  "navigationBarTitleText": "TabPanel"
+}

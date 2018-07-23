@@ -1,8 +1,0 @@
-.html{
-
-}
-.html p{
-  line-height: 1;
-  text-indent: 0;
-  font-size: 22rpx;
-}

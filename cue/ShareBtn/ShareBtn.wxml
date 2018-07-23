@@ -1,4 +1,0 @@
-<!--Matrix_Wx/ShareBtn/ShareBtn.wxml-->
- <view class="{{currentTheme.className}}" wx:for="{{value}}" wx:item="{{item}}" wx:key="*this">
-    {{item.Title}} 
- </view>

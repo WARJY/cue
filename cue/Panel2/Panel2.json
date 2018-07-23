@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "InputModal":"../inputModal/inputModal",
-    "MButton": "../Button/Button"
-  }
-}

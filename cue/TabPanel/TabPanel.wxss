@@ -44,7 +44,9 @@
 }
 .tab-item:first-child{border-top-left-radius: 20rpx;border-bottom-left-radius: 20rpx;}
 .tab-item:last-child{border-top-right-radius: 20rpx;border-bottom-right-radius: 20rpx;}
- 
+.tab-item:nth-child(2){border-left:0;}
+.tab-item:nth-child(3){border-left:0;}
+.tab-item:nth-child(4){border-left:0;}
 
 .tab-item.active{
   font-weight: bold;

@@ -2,6 +2,5 @@
   "component": true,
   "usingComponents":{
     "Search":"/cue/Search/Search"
-
   }
 }

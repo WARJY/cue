@@ -1,0 +1,7 @@
+<Page isShow="{{true}}">
+  <view style='background-color:#fff'>
+    <Search searchOn="{{searchOn}}" searchDetail="{{true}}" placeholder="搜索" bind:searchOn="handleSearchOn" disabled="{{true}}" bind:keywordsInput="handleKeywords" goListByKey="handleSearch" >
+    <view style='padding:20rpx;text-align:center'>我是搜索结果</view>
+    </Search>
+  </view>
+</Page>

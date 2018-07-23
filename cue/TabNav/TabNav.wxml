@@ -1,9 +1,0 @@
-<view class='flex-row  {{currentTheme.className}}' style='flex-grow:1;background:{{currentTheme.background}}'>
-  <view class='flex-1 flex-column'wx:for="{{value}}" wx:item="{{item}}" wx:key="*this" bindtap='gopage' data-id='{{item.id}}' data-url='{{item.url}}'>
-    <i class='{{item.iconFont}}' style='font-size:{{currentTheme.font_size_top}};color:{{currentTheme.font_color_dark}};margin-top:{{currentTheme.margin_top}}'></i>
-    <view style='font-size:{{currentTheme.font_size_bottom}};color:{{currentTheme.font_color_light}};margin-bottom:{{currentTheme.margin_bottom}}'>{{item.text}}</view>
-  </view>
-</view>
-
-
- 

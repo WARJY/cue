@@ -1,2 +1,0 @@
-/* Matrix_Wx/UserInfo/UserInfo.wxss */
-.flex-column{display: flex;flex-direction: column;justify-content: space-between;}

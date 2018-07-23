@@ -1,9 +1,0 @@
-<view class='grids {{currentTheme.is_order==true?"border":""}}'>
-  <view class='grid {{currentTheme.className}}' wx:for="{{value}}" wx:key="*this" wx:item='{{item}}' style='float:left;width:{{currentTheme.width}};box-sizing: border-box;'>
-    <view style='font-size:{{currentTheme.font_size_title}};color:{{currentTheme.font_color_dark}};padding:{{currentTheme.padding}};height:{{currentTheme.height_top}};line-height:{{currentTheme.line_height_top}}'> {{item.Title}}</view>
-    <view style='font-size:{{currentTheme.font_size_content}};color:{{currentTheme.font_color_light}};padding:{{currentTheme.padding}};font-weight:{{currentTheme.font_weight}};height:{{currentTheme.height_bottom}};line-height:{{currentTheme.line_height_bottom}}'>
-    {{item.Content}}</view>
-  </view>
-   <view class='grid-ft {{currentTheme.is_arrow?currentTheme.className:""}}'></view>
-</view>
-<view style='clear:both'></view>

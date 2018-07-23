@@ -1,4 +1,0 @@
-<!--Matrix_Wx/ScrollPanel/ScrollPanel.wxml-->
-<scroll-view style='height:{{swiperHeight}}rpx;' scroll-x="true">
-  <slot></slot>
-</scroll-view>

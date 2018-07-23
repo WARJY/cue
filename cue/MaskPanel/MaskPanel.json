@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "BuyPanel": "/Matrix_Wx/BuyPanel/BuyPanel"
-  }
-}

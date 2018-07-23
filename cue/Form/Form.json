@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "Search": "/cue/MT_Search/MT_Search",
+    "Search": "/cue/Search/Search",
     "MInput": "/cue/Input/Input",
     "upload": "/cue/Upload/Upload",
     "BtnPanel": "/cue/BtnPanel/BtnPanel"

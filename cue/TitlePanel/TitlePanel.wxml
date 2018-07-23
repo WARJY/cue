@@ -1,7 +1,0 @@
-<!--Matrix_Wx/TitlePanel/TitlePanel.wxml-->
-<view class='title'>
-  <view class='border-left title-left'>
-    {{title}}
-  </view>
-  <view class='title-right'></view>
-</view>

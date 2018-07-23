@@ -1,4 +1,0 @@
-<NewsDetail value="{{value}}" wx:if="{{detailtype==='news'}}" />
-<ProductDetail value="{{value}}" wx:elif="{{detailtype==='product'}}" />
-<InfoDetail value="{{value}}" wx:elif="{{detailtype==='info'}}" ><slot></slot></InfoDetail>
-<Member value="{{value}}" wx:elif="{{detailtype==='member'}}"><slot></slot></Member>

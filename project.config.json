@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 6,
 			"list": [
 				{
 					"id": 0,
@@ -54,6 +54,23 @@
 					"name": "form",
 					"pathName": "demo/form/form",
 					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "search",
+					"pathName": "demo/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "tabPanel",
+					"pathName": "demo/tabPanel/tabPanel",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "banner",
+					"pathName": "demo/banner/banner"
 				}
 			]
 		}

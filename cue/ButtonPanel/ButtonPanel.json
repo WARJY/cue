@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "Buttons": "/Matrix_Wx/Button/Button"
-  }
-}

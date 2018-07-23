@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Search": "/cue/Search/Search",
+    "Page": "/cue/Page/Page"
+  },
+  "navigationBarTitleText": "Search"
+}

@@ -1,6 +1,0 @@
-<!--Matrix_Wx/FormBtn/FormBtn.wxml-->
-<view bindtap='OnTap' class='{{currentTheme.className}}' style='background:{{value[0].Background || currentTheme.background||background}}'>
-  <view class='btn-box'>
-    {{value[0].Title || title}}
-  </view>
-</view>

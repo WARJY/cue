@@ -1,0 +1,10 @@
+<Page isShow="{{true}}">
+  <TabPanel type="default" Items="{{TabPanel}}" defaultTab="{{0}}" bind:switchTab="handleSwitch">
+    <view slot="0" id="slot0" style='text-align:center;background-color:#fff;padding:20rpx 0'>
+      我是第一页
+    </view>
+    <view slot="1" id="slot1" style='text-align:center;background-color:#fff;padding:20rpx 0'>
+      我是第二页
+    </view>
+  </TabPanel>
+</Page>

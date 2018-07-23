@@ -40,15 +40,12 @@ Component({
     searched: false
   },
 
-  // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
-  attached: function () { },
   ready: function () {
     this.setData({
       cityOn: this.properties.cityOn
     })
   },
-  moved: function () { },
-  detached: function () { },
+
   methods: {
     _searchOn: function (e) {
       this.triggerEvent('searchOn', { pagelink: this.properties.pagelink }, {})
@@ -73,17 +70,15 @@ Component({
     },
     _goList: function (e) {
       let myEventDetail = {}
+      let keywords = { keywords:""}
       if (e.currentTarget.dataset.keywords) {
-        myEventDetail = {
-          keywords: e.currentTarget.dataset.keywords
-        }
+        keywords.keywords = e.currentTarget.dataset.keywords
       } else {
-        myEventDetail = {
-          keywords: this.data.keywords
-        }
+        keywords.keywords = this.data.keywords
       }
-      this.triggerEvent('goListByKey', myEventDetail, {});
+      this.triggerEvent('goListByKey', keywords, {});
       this.setData({
+        keywords: keywords.keywords,
         searchDetail: false,
         matchingItems: [],
         searched: true

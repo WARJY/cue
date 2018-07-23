@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Banner": "/cue/Banner/Banner",
+    "Page": "/cue/Page/Page"
+  },
+  "navigationBarTitleText": "Banner"
+}

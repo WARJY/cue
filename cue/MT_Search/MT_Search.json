@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "City": "../MT_City/MT_City"
-  }
-}
