@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Page": "/cue/Page/Page",
+    "Chat": "/cue/Chat/Chat"
+  },
+  "navigationBarTitleText": "cue"
+}

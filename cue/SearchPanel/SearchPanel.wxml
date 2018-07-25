@@ -1,0 +1,12 @@
+<view class='bar {{type}} {{currentTop>fixedTop?"fixed":"fixed"}}' style='top:{{currentTop>fixedTop?fixedTop + "px":"0px"}}' id="searchPanel">
+  <view wx:for="{{items}}" wx:item="item" wx:key="Id" data-index="{{index}}" class='search-item {{index==currentTab&&detailOn?"active":""}}'  bindtap='_handleTab'>{{currentDetail[index]?currentDetail[index].Name:item.title}}</view>
+  <view wx:if="{{detailOn}}" catchtouchmove="true" class='detail-mask' bindtap='_close'></view>
+  <scroll-view wx:if="{{detailOn}}" class='detail' scroll-y>
+    <block wx:if="{{data}}">
+      <view wx:for="{{data[currentTab]}}" wx:item="item" wx:key="{{index}}" class='detail-item {{data[currentTab][index].Id===currentDetail[currentTab].Id?"active":""}}' data-item="{{item}}" data-index="{{index}}" bindtap='_handleDetail' >
+      {{item.Name}}
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<view wx:if="{{currentTop>=fixedTop}}" style='height:44px'></view>

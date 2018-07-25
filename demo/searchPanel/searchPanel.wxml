@@ -1,0 +1,3 @@
+<Page isShow="{{true}}">
+   <SearchPanel items="{{SearchPanel}}" value="{{SearchParams}}" bind:panelSerach="handelSearchPanel" fixedTop="0" />
+</Page>

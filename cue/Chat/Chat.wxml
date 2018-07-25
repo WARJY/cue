@@ -1,0 +1,39 @@
+<scroll-view class='page chat' scroll-y="{{true}}"  scroll-into-view="{{LastId}}" bindscrolltolower="End" scroll-with-animation="{{true}}" bindscroll="Scroll" style='height:calc(100vh - {{height}} - 105rpx)'>
+  <view id='Top'></view>
+  <view class='loading-more' bindtap="_onLoadLast" wx:if="{{More}}">
+    加载更多
+    <i class='bd bd-fresh'></i>
+  </view>
+  
+  <block wx:for="{{items}}" wx:key="Id">
+    <view class='flex'>
+      <view class='date'>{{item.date}}</view>
+    </view>
+    <view class='flex chat-item' wx:for="{{item.left}}" wx:key="Id" wx:for-item="item_l">
+      <image class='user' src='{{item_l.FaceImage}}'></image>
+      <view class='content left'>{{item_l.Content}}</view>
+    </view>
+    <view class='flex chat-item' style='justify-content:flex-end' wx:for="{{item.right}}" wx:key="Id" wx:for-item="item_r">
+      <view class='content right'>{{item_r.Content}}</view>
+      <image class='user' src='{{item_r.FaceImage}}'></image>
+    </view>
+  </block>
+
+  <form wx:if="{{showComment}}" class='comment-input' report-submit name='pushMsgFm' bindsubmit='_commit'>
+    <textarea class='textarea' auto-focus='true' placeholder='{{placeholder}}' bindinput='_input' value='{{reply}}'></textarea>
+    <view class='commit-box'>
+      <button class='commit' form-type='submit'>发送</button>
+    </view>
+    <view class='quick-reply'>
+      <view class='title'>快速回复：</view>
+      <view class='reply-box'>
+        <view wx:for="{{quickItems}}" wx:key="{{index}}" class='item' data-val="{{item.content}}" bindtap='_quick'>{{item.content}}</view>
+      </view>
+    </view>
+    <view style='height:calc(100vh - 250px)' bindtap='_close'></view>
+  </form>
+</scroll-view>
+<view class='comment-panel flex-center'>
+  <input class='flex-item' type='text' bindinput='_input' value='{{reply}}' placeholder='点击输入私信' bindtap='_showInput'></input>
+  <view class='button' bindtap='_commit'>发送</view>
+</view>

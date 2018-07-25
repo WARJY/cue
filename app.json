@@ -8,13 +8,17 @@
     "demo/accountPanel/accountPanel",
     "demo/tabPanel/tabPanel",
     "demo/banner/banner",
+    "demo/searchPanel/searchPanel",
+    "demo/chat/chat",
     "cue/Page/Page",
     "cue/AccountPanel/AccountPanel",
     "cue/Input/Input",
     "cue/Search/Search",
     "cue/Form/Form",
     "cue/TabPanel/TabPanel",
-    "cue/Banner/Banner"
+    "cue/Banner/Banner",
+    "cue/SearchPanel/SearchPanel",
+    "cue/Chat/Chat"
   ],
   "window":{
     "backgroundTextStyle":"light",
