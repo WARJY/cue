@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 5,
 			"list": [
 				{
 					"id": 0,
@@ -82,7 +82,20 @@
 				{
 					"id": -1,
 					"name": "chat",
-					"pathName": "demo/chat/chat"
+					"pathName": "demo/chat/chat",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "menu",
+					"pathName": "demo/menu/menu",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "list",
+					"pathName": "demo/list/list",
+					"query": ""
 				}
 			]
 		}

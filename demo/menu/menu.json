@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Menu": "/cue/Menu/Menu",
+    "Page": "/cue/Page/Page"
+  },
+  "navigationBarTitleText": "Menu"
+}

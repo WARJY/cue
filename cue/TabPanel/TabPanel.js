@@ -3,11 +3,7 @@ Component({
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
   },
-  behaviors: [],
 
-  /**
-   * 组件的属性列表
-   */
   properties: {
     Items: { type: Array, value: [] },
     type:{type:String,value:"default"},
@@ -17,16 +13,10 @@ Component({
     currentTop: { type: Number, value: null }
   },
 
-  /**
-   * 组件的初始数据
-   */
   data: {
     currentTab:0
   },
 
-  /**
-   * 组件的方法列表
-   */
   ready: function () {
     this.setData({
       currentTab: this.properties.defaultTab

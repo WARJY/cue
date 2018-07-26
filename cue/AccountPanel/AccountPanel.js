@@ -34,20 +34,23 @@ Component({
    * 组件的方法列表
    */
   ready() {
-    let UserInfo = wx.getStorageSync("UserInfo")
-    let color = app.color
-    if (UserInfo && UserInfo.nickName && UserInfo.avatarUrl) {
-      this.setData({
-        showInfo: false,
-        showLogin:false,
-        color: color
-      })
-    } else {
-      this.setData({
-        showInfo: true,
-        color: color
-      })
-    }
+    // let UserInfo = wx.getStorageSync("UserInfo")
+    // let color = app.color
+    // if (UserInfo && UserInfo.nickName && UserInfo.avatarUrl) {
+    //   this.setData({
+    //     showInfo: false,
+    //     showLogin:false,
+    //     color: color
+    //   })
+    // } else {
+    //   this.setData({
+    //     showInfo: true,
+    //     color: color
+    //   })
+    // }
+    this.setData({
+      color:app.color
+    })
   },
 
   methods: {

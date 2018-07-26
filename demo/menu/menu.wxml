@@ -1,0 +1,3 @@
+<Page isShow="{{true}}">
+  <Menu cols="{{4}}" image="{{image}}" Items="{{Items}}" bind:next="handleNext"/>
+</Page>

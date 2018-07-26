@@ -19,4 +19,6 @@ AccountPanel
   3.微信快捷登录需要获取用户手机号码，并通过code换取openId，所以该接口返回的是微信getPhoneNumber事件
 -->
 
-<AccountPanel showLogin="{{true}}" logoUrl="/images/cue.png" wxLog="微信快捷登录" logType="{{logType}}" bind:wxLog="handleWxLog" bind:userInfo="handleUserInfo" />
+<Page isShow="{{true}}">
+  <AccountPanel showLogin="{{true}}" logoUrl="/images/cue.png" wxLog="微信快捷登录" logType="{{logType}}" bind:wxLog="handleWxLog" bind:userInfo="handleUserInfo" />
+</Page>

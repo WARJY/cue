@@ -1,0 +1,108 @@
+<view wx:if="{{type=='default'}}" class="panel-box panel-box-access">
+  <view class="panel-hd" wx:if="{{title}}">{{title}}</view>
+  <view class="panel-bd">
+    <block wx:for="{{items}}" wx:key="*this" for-item="item">
+      <view class="media-box" bindtap="_goDetail" data-item="{{item}}">
+        <view class="media-box-hd">
+          <image class="media-box-thumb" src="{{item.src}}" />
+        </view>
+        <view class="media-box-bd">
+          <view class="media-box-title">{{item.title}}</view>
+          <view class="media-box-desc">{{item.content}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view wx:if="{{more}}" class="panel-ft">
+    <view class="panel-link">
+      <view class="link-bd" bindtap='_goMore'>{{more}}</view>
+      <view class="link-ft"></view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{type=='simple'}}" class="panel-box-simple panel-box-access">
+  <view class="panel-bd">
+    <block wx:for="{{items}}" wx:key="*this" for-item="item">
+      <view class="media-box" bindtap="_goDetail" data-item="{{item}}">
+        <view class="media-box-hd-simple">
+          <image class="media-box-thumb" src="{{item.src}}" />
+        </view>
+        <view class="media-box-bd">
+          <view class="media-box-title">{{item.title}}</view>
+        </view>
+        <view class='media-box-ft-simple'>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view wx:if="{{type=='detail'}}" class="panel-box-detail panel-box-access">
+  <view class="panel-bd">
+    <block wx:for="{{items}}" wx:key="*this" for-item="item">
+      <view class="media-box bb0" bindtap="_goDetail" data-item="{{item}}">
+        <view class="media-box-bd">
+          <view class="media-box-title">
+            {{item.title}}
+            <view wx:if="{{item.titleP}}" class='right orange'>{{item.titleP}}</view>
+          </view>
+          <view class="media-box-desc">
+            {{item.content}}
+            <view wx:if="{{item.contentP}}" class='right date'>{{item.contentP}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='media-box-detail {{item.remark?"pb":""}}'>
+        <view class="media-box-hd-detail">
+          <image class="media-box-thumb" src="{{item.src}}" />
+        </view>
+        <view class="media-box-bd">
+          <view class="media-box-title-detail">{{item.titleD}}</view>
+          <view class="media-box-content-detail">{{item.contentD}}</view>
+        </view>
+      </view>
+      <view class='media-box-remark'>{{item.remark}}</view>
+    </block>
+  </view>
+</view>
+
+<view wx:if="{{type=='plus'}}" class="panel-box panel-box-access">
+  <view class="panel-hd" wx:if="{{title}}">{{title}}</view>
+  <view class="panel-bd">
+    <block wx:for="{{items}}" wx:key="*this" for-item="item">
+      <view class="media-box" bindtap="_goDetail" data-item="{{item}}">
+        <view wx:if="{{item.src}}" class="media-box-hd">
+          <image class="media-box-thumb" src="{{item.src}}" />
+        </view>
+        <view class="media-box-bd">
+          <view wx:if="{{item.title}}" class="media-box-title">
+            {{item.title}}
+            <view wx:if="{{item.state}}" class="state">已激活</view>
+            <view wx:if="{{item.titleP}}" class='right orange'>
+              <image wx:if="{{item.titleP_icon}}" class='right-icon' src='{{item.titleP_icon}}'></image>{{item.titleP}}
+            </view>
+          </view>
+          <view wx:if="{{item.stitle}}" class="media-box-stitle">
+            {{item.stitle}}
+            <view wx:if="{{item.stitleP}}" class='right'>
+              <image wx:if="{{item.stitleP_icon}}" class='right-icon' src='{{item.stitleP_icon}}'></image>{{item.stitleP}}
+            </view>
+          </view>
+          <view wx:if="{{item.content}}" class="media-box-desc">
+            {{item.content}}
+            <view wx:if="{{item.contentP}}" class='right date'>
+              <image wx:if="{{item.contentP_icon}}" class='right-icon' src='{{item.contentP_icon}}'></image>{{item.contentP}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view wx:if="{{more}}" class="panel-ft">
+    <view class="panel-link">
+      <view class="link-bd" bindtap='_goMore'>{{more}}</view>
+      <view class="link-ft"></view>
+    </view>
+  </view>
+</view>

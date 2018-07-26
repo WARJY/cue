@@ -1,0 +1,25 @@
+/* cue/Menu/Menu.wxss */
+.menu{
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20rpx 0
+}
+
+.menu .item{
+  text-align: center;
+  margin-top: 20rpx
+}
+
+.menu image{
+  width: 100%;
+}
+
+.menu .title{
+  font-size: 28rpx;
+  color: #666
+}

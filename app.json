@@ -10,6 +10,8 @@
     "demo/banner/banner",
     "demo/searchPanel/searchPanel",
     "demo/chat/chat",
+    "demo/menu/menu",
+    "demo/list/list",
     "cue/Page/Page",
     "cue/AccountPanel/AccountPanel",
     "cue/Input/Input",
@@ -18,7 +20,11 @@
     "cue/TabPanel/TabPanel",
     "cue/Banner/Banner",
     "cue/SearchPanel/SearchPanel",
-    "cue/Chat/Chat"
+    "cue/Chat/Chat",
+    "cue/Panel/Panel",
+    "cue/List/List",
+    "cue/Button/Button",
+    "cue/Menu/Menu"
   ],
   "window":{
     "backgroundTextStyle":"light",
