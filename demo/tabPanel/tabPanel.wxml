@@ -1,3 +1,29 @@
+<!-- 
+TabPanel
+带有切换功能的选项卡组件
+
+@properties
+  type(String):
+    用于管理组件样式，type将作为一个类名传入组件最上层view
+  Items(Array):
+    定义tab按钮，格式如下:
+    TabPanel:[
+      { Title: "第一页" },
+      { Title: "第二页"}
+    ]
+  defaultTab(Number):
+    定义默认页数，从0开始
+  
+@bind
+  switchTab:
+    发生切换的回调，切换时将自动计算并改变组件的高度
+
+@tips
+  选项卡内容通过具名slot的形式传入tabpanel下，且必须带有slot和id属性，id格式为slot+index
+  否则无法获取到slot的高度
+
+ -->
+
 <Page isShow="{{true}}">
   <TabPanel type="default" Items="{{TabPanel}}" defaultTab="{{0}}" bind:switchTab="handleSwitch">
     <view slot="0" id="slot0" style='text-align:center;background-color:#fff;padding:20rpx 0'>

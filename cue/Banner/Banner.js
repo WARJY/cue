@@ -1,9 +1,11 @@
 Component({
-  externalClasses: ['my-class'],
-  behaviors: [],
   properties: {
     Items: { type: Array, value: '' },
     height: { type: Number, value: '' },
+    showPoint: {type:Boolean, value:true },
+    autoplay: { type: Boolean, value: true },
+    interval: { type: Number, value: 2000 },
+    duration: { type: Number, value: 500 }
   },
 
   // 私有数据，可用于模版渲染

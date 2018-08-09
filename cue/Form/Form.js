@@ -136,21 +136,21 @@ Component({
 
     this.properties.Items.map(item => {
       if (item.path && item.type === 'select') {
-        // process.push(new Promise((r, j) => {
-        //   app.post(item.path, {
-        //     GetCache: true,
-        //     State: true
-        //   }).then(data => {
-        //     this.setData({
-        //       selects: Object.assign({}, this.data.selects, {
-        //         [item.name]: data.Items
-        //       })
-        //     })
-        //     r(data)
-        //   }).catch(e => {
-        //     j(e)
-        //   })
-        // }))
+        process.push(new Promise((r, j) => {
+          app.post(item.path, {
+            GetCache: true,
+            State: true
+          }).then(data => {
+            this.setData({
+              selects: Object.assign({}, this.data.selects, {
+                [item.name]: data.Items
+              })
+            })
+            r(data)
+          }).catch(e => {
+            j(e)
+          })
+        }))
       }
     })
 

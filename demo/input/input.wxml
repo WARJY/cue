@@ -1,5 +1,56 @@
+<!-- 
+Input
+用于处理用户输入的组件，共9种类型，适应不同的应用场景
+
+@properties
+  type(String):
+    组件类型: 
+      ·text     文本类型
+      ·number   数字类型，点击后只弹出数字键盘
+      ·password 密码类型，输入后自动隐藏
+      ·code     验证码类型，带有发送验证码的按钮，倒计时功能和电机回调
+      ·section  选项类型，类似微信section组件，点击后弹出微信模态选择框，需要传入array选项
+      ·city     地区类型，类似微信section组件，点击后弹出微信模态选择框
+      ·date     时间类型，类似微信section组件，点击后弹出微信模态选择框
+      ·search   搜索类型，适合需要搜索的字段，点击后弹出搜索页面，带有搜索及模糊匹配的回调
+      ·select   选择类型，适合选项较少的字段，点击后弹出选择页面，带有选择的回调
+      ·money    充值类型
+      ·textArea 文字区域，带有计数功能
+  title(String):
+    标题 显示于input上一行
+  label(String):
+    标签名 显示于input之前
+  placeholder(String):
+    提示语
+  name(String):
+    字段名，产生输入时会作为当前input的键组成一个对象返回
+  value(String):
+    input的值，可作为默认值传入
+  array(Array):
+    仅section类型有效，用户传入section选项，类似微信原生section
+  selects(Array):
+    仅select类型有效，用户传入selects选项将生成云状选项供选择，适用于选项较少的情况
+
+@bind
+  MInput:
+    触发input事件的回调，e.detail将返回以input的name属性为键，input的值为值的对象
+    search类型的MInput，e.detail.traget将返回当前触发input的this指向，可以通过target.matchingItems控制模糊匹配
+  sendCode:
+    仅code类型有效，点击发送验证码的回调
+  search:
+    仅search类型有效，e.detail将返回搜索的关键字
+  select:
+    仅select类型有效，e.detail将返回选项的全部数据
+  maxLength:
+    仅textArea类型有效，输入时记录字数变化，达到最大后不能输入
+
+@tips
+  Input组件建议搭配form组件使用，form有更完善的验证机制和更丰富的功能
+  
+-->
+
 <Page isShow="{{true}}">
-  <view style='background-color:#fff;padding:20rpx'>
+  <view style='background-color:#fff;padding:0 20rpx'>
     <CInput type="text" label="姓名" placeholder="输入您的姓名" name="Name" value="gcc" bind:MInput="handleInput" title="登录" />
     <CInput type="number" label="年龄" placeholder="输入您的年龄" name="Age" bind:MInput="handleInput" />
     <CInput type="password" label="密码" placeholder="输入密码" name="PassWord" bind:MInput="handleInput" />
@@ -9,7 +60,7 @@
     <CInput type="date" label="时间" placeholder="请选择" name="Date" bind:MInput="handleInput" />
     <CInput type="search" label="学校" placeholder="请选择" name="School" bind:MInput="handleInput" bind:search="handleSearch" />
     <CInput type="select" label="行业" placeholder="请选择" name="Trade" bind:MInput="handleInput" bind:select="handleSelect" selects="{{selects}}" />
+  </view>
     <CInput type="textArea" title="描述" placeholder="请输入" name="Date" bind:MInput="handleInput" maxLength="20" />
     <CInput type="money" label="充值" placeholder="输入充值金额" name="Recharge" bind:MInput="handleInput"  />
-  </view>
 </Page>

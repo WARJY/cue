@@ -1,3 +1,24 @@
+<!-- 
+List
+列表组件
+
+@properties
+  type(String):
+    列表类型  @simple：标题列表
+  items(Array):
+    配置列表属性，格式如下：
+    [{
+      src: '/images/icon.png',
+      title: '吾之所向，皆浮于空',
+      url: ""
+    }]
+    若传入url则点击后跳转至改url，否则触发回调
+
+@bind
+  goDetail：
+    点击列表后的回调，每行的数据通过e.detail传入
+
+ -->
 <Page isShow="{{true}}">
   <List type="simple" title="祈求者！" items="{{items}}" bind:goDetail="GoDetail" />
 </Page>

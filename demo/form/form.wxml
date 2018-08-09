@@ -1,3 +1,63 @@
+<!-- 
+From
+用于记录用户输入，并完成数据验证的组件
+
+@properties
+  Items(Array):
+    表单配置选项，大致结构如下：
+    Items: [
+      {type: "text",label: "标题",placeholder: "请输入",name: "Title",request: true},
+      {type: "section",label: "性别",placeholder: "请选择",name: "Male",array:["男","女"],request: true},
+      {type: "select",label: "合作行业",placeholder: "请选择",name: "InfoTrade",request: true,path: ' '，selects:[]},
+      {type: "number",label: "手机号码",placeholder: "请输入",name: "Mobile",request: true,check: "phone"},
+      {type: "date",label: "有效时间",placeholder: "请输入",name: "ActiityTime",request: true},
+      {type: "textArea",title: "我们提供",placeholder: "请输入我们提供的详细描述...",name: "SupplyText",request: true,maxLength: 200},
+      {type: "upload",title: "图片",name: "img",label: "图片",path: " ",fields: ["Image", "Image2", "Image3"],count: 1}
+    ]
+    数组中每个item均会生成一个input组件，所有input组件的事件全部由form内部进行处理，Items只进行每行input的配置
+    type,label,title,placeholder,defaultvalue属性参考Input组件属性
+
+    ·name       字段名，产生输入时会作为当前input的键组成一个对象返回
+    ·array      仅section类型有效，类似微信section，传入选项
+    ·path       仅select及upload类型有效
+                select若传入path，则会从path中获取当前select的选项并生成为云状标签
+                upload若传入path，则会作为图片服务器地址，图片将会自动上传至path地址并将返回的值作为当前字段的值
+    ·selects    仅select类型有效，选项数组
+    ·request    验证属性，表示是否必填
+    ·check      验证属性，用于特殊字段的验证，如手机号("phone")
+    ·maxLength  验证属性，用户验证输入的最大长度，验证失败则弹出提示框
+    ·minLength  验证属性，用户验证输入的最小长度，验证失败则弹出提示框
+    ·max        验证属性，用户验证输入的最大值，验证失败则弹出提示框
+    ·min        验证属性，用户验证输入的最小值，验证失败则弹出提示框
+    ·fields     仅upload类型有效，feilds中有几个字段就会生成几个图片框，上传后每个图片的field将作为图片网络地址的键返回
+    ·count      仅upload类型有效，表示最少上传几张图片，验证失败则弹出提示框
+
+  original(Object):
+    表单的值，如果传入original,则original中对应name的值将覆盖Items中的defaultvalue
+  commit_text(String):
+    提交按钮，若传入commit_text则会出现提交按钮
+  params(Object):
+    将作为额外的数据合并到表单数据中
+  path(String):
+    （无效）表单提交路径，供开发者可以取到path在组件内部自定义组件的上传回调
+  autologin(Boolean):
+    （无效）提交是否需要登录，供开发者可以在组件内部自定义组件的上传回调
+  
+@bind:
+  match:(同Input中的match)
+    仅处理search类型input的输入，关键字将作为e.detail.keywords返回
+    同时触发input的this指向将作为e.detail.target返回，可以通过
+    target.setData({
+      matchingItems:[]
+    })
+    来开启模糊匹配功能
+  formCommit:
+    提交回调，返回form中的所有字段，params的额外字段及表单的formId合并的对象
+
+@tips
+  若在selects中传入path，返回数据的格式应为[{Name:""}]
+
+-->
 <Page isShow="{{true}}">
   <CForm Items="{{Items}}" original="{{value}}" commit_text="发布" path="Info.Member" autologin="{{false}}" params="{{params}}" bind:match="handleMatch" bind:formCommit="handleCommit" />
 </Page>

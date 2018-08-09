@@ -26,7 +26,12 @@ Page({
       placeholder: "请选择",
       name: "InfoTrade",
       request: true,
-      path: ' '
+      path: '',
+      selects: [
+        { Id: 1, Name: "IT/互联网" },
+        { Id: 2, Name: "主播" },
+        { Id: 3, Name: "销售" },
+      ]
     },
     {
       type: "number",

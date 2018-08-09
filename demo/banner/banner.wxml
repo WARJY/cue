@@ -1,3 +1,28 @@
+<!-- 
+Banner
+轮播banner组件
+
+@properties
+  Items(Array):
+    banner图片配置，格式如下
+    bannerItems: [
+      { id: 1, src: "/images/banner-index.jpg" },
+      { id: 2, src: "/images/banner-index.jpg" },
+      { id: 3, src: "/images/banner-index.jpg" }
+    ]
+  showPoint:
+    是否显示下方的小点
+  autoplay：
+    是否开启自动轮播
+  interval：
+    切换时间间隔
+  duration：
+    切换动画持续时间
+  height:
+    banner高度
+
+ -->
+
 <Page isShow="{{true}}">
   <Banner Items="{{bannerItems}}" height="270" />
 </Page>

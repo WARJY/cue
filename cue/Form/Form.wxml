@@ -2,7 +2,7 @@
   <block wx:for="{{Items}}" wx:key="name">
     <view wx:if="{{item.type!=='textArea' && item.type!=='upload'}}" class='cells' style='display:{{item.hidden?"none":"block"}}'>
       <MInput title="{{item.title}}" maxLength="{{item.maxLength}}" type="{{item.type}}" label="{{item.label}}" placeholder="{{item.placeholder}}" name="{{item.name}}" array="{{item.array}}" value="{{data[item.name]}}" matchingItems="{{item.matchingItems}}"
-        bind:MInput='_handleInput' bind:search='_handleInput' bind:select="_handleInput" bind:SearchOn="_handleSearchOn" selects="{{selects[item.name]}}" bind:SearchOff="_handleSearchOff" />
+        bind:MInput='_handleInput' bind:search='_handleInput' bind:select="_handleInput" bind:SearchOn="_handleSearchOn" selects="{{item.selects?item.selects:selects[item.name]}}" bind:SearchOff="_handleSearchOff" />
     </view>
     <!-- 文字区域 -->
     <MInput wx:elif="{{item.type==='textArea'&&!searchDetail}}" title="{{item.title}}" maxLength="{{item.maxLength}}" type="{{item.type}}" label="{{item.label}}" placeholder="{{item.placeholder}}" name="{{item.name}}" value="{{data[item.name]}}" bind:MInput='_handleInput'

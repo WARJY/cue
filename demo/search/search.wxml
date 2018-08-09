@@ -1,6 +1,33 @@
+<!-- 
+Search 
+搜索组件，用户搜索功能，搜索结果写在search下的匿名slot中
+
+@properties
+  searchOn(Boolean):
+    是否显示为打开状态
+  searchDetail(Boolean):
+    是否显示搜索的详情部分
+  placeholder(String):
+    搜索框提示字
+
+@bind
+  searchOn:
+    点击search后开启搜索状态的回调
+  keywordsInput:
+    输入搜索关键字的回调，关键字通过e.detail.keywords传入
+    同时将触发搜索的this指向通过e.dtail.target传入，可以通过
+    target.setData({
+      matchingItems:[]
+    })
+    来开启模糊匹配功能
+  goListByKey:
+    点击搜索的回调，关键字通过e.detail.keywords传入
+    
+-->
+
 <Page isShow="{{true}}">
   <view style='background-color:#fff'>
-    <Search searchOn="{{searchOn}}" searchDetail="{{true}}" placeholder="搜索" bind:searchOn="handleSearchOn" disabled="{{true}}" bind:keywordsInput="handleKeywords" goListByKey="handleSearch" >
+    <Search searchOn="{{searchOn}}" searchDetail="{{true}}" placeholder="搜索" bind:searchOn="handleSearchOn" disabled="{{true}}" bind:keywordsInput="handleKeywords" bind:goListByKey="handleSearch" >
     <view style='padding:20rpx;text-align:center'>我是搜索结果</view>
     </Search>
   </view>

@@ -1,5 +1,5 @@
 <view class='banner-box'>
-  <swiper class="my-class" indicator-dots="{{true}}" autoplay="{{autoplay}}" interval="{{1000}}" duration="{{500}}"  style='height:{{height+"rpx"}}'>
+  <swiper class="my-class" indicator-dots="{{showPoint}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"  style='height:{{height+"rpx"}}'>
     <block wx:for="{{Items}}" wx:key="id">
       <swiper-item>
         <image class='image' src="{{item.src}}" />

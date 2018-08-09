@@ -1,3 +1,27 @@
+<!-- 
+SearchPanel
+下拉搜索框面板
+
+@properties
+  items(Array):
+    searchPanel配置属性，格式如下：
+    SearchPanel: [{
+        title: "行业", name: "InfoTrade", load: false, path: " "
+      },{
+        title: "地区", name: "InfoCity", load: false, path: " "
+      }]
+    若传入path，则会从path获取数据传入面板中
+  value(Object):
+    选项列表，若传入value，则会覆盖path中获取的数据
+  fixedTop(Number):
+    若传入fixedTop，则组件位置会变为fixed
+
+@bind
+  panelSerach：
+    点击选项的回调，选项通过e.detail传入
+  
+ -->
+
 <Page isShow="{{true}}">
    <SearchPanel items="{{SearchPanel}}" value="{{SearchParams}}" bind:panelSerach="handelSearchPanel" fixedTop="0" />
 </Page>

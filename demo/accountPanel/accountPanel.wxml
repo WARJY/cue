@@ -3,16 +3,23 @@ AccountPanel
 用于用户授权操作及选择登录方式
 
 @properties
-  showLogin(Boolean)  是否显示组件
-  logoUrl(String)     授权页面logo图片的url
-  wxLog(String)       微信快捷登录按钮（注册此属性则开启微信快捷登录，否则不提供微信快捷登录）
-  logType(Array)      其他登录方式，格式如下
-                      logType:[
-                        { icon："/images/phone.png", text:"手机号码登录/注册", link:"/pages/login/login" }
-                      ]
+  showLogin(Boolean):
+    是否显示组件
+  logoUrl(String):
+    授权页面logo图片的url
+  wxLog(String):
+    微信快捷登录按钮（注册此属性则开启微信快捷登录，否则不提供微信快捷登录）
+  logType(Array):
+    其他登录方式，格式如下=>logType:[
+      { icon："/images/phone.png", text:"手机号码登录/注册", link:"/pages/login/login" }
+    ]
+
 @bind
-  wxLog               微信getPhoneNumber事件（无AppId时无法获取）
-  userInfo            仅获取授权时触发，获取userInfo回调，通过e.detail传入
+  wxLog:
+    微信getPhoneNumber事件（无AppId时无法获取）
+  userInfo:
+    仅获取授权时触发，获取userInfo回调，通过e.detail传入
+
 @tips
   1.仅需要用户授权时请不要传入wxLog及logType，此时触发userInfo事件
   2.按钮颜色由app.js中的color属性控制
