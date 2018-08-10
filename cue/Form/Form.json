@@ -2,8 +2,7 @@
   "usingComponents": {
     "Search": "/cue/Search/Search",
     "MInput": "/cue/Input/Input",
-    "upload": "/cue/Upload/Upload",
-    "BtnPanel": "/cue/BtnPanel/BtnPanel"
+    "upload": "/cue/Upload/Upload"
   },
   "component": true
 }

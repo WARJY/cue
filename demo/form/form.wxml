@@ -8,20 +8,17 @@ From
     Items: [
       {type: "text",label: "标题",placeholder: "请输入",name: "Title",request: true},
       {type: "section",label: "性别",placeholder: "请选择",name: "Male",array:["男","女"],request: true},
-      {type: "select",label: "合作行业",placeholder: "请选择",name: "InfoTrade",request: true,path: ' '，selects:[]},
+      {type: "select",label: "合作行业",placeholder: "请选择",name: "InfoTrade",request: true,selects:[]},
       {type: "number",label: "手机号码",placeholder: "请输入",name: "Mobile",request: true,check: "phone"},
       {type: "date",label: "有效时间",placeholder: "请输入",name: "ActiityTime",request: true},
       {type: "textArea",title: "我们提供",placeholder: "请输入我们提供的详细描述...",name: "SupplyText",request: true,maxLength: 200},
-      {type: "upload",title: "图片",name: "img",label: "图片",path: " ",fields: ["Image", "Image2", "Image3"],count: 1}
+      {type: "upload",title: "图片",name: "img",label: "图片",fields: ["Image", "Image2", "Image3"],count: 1}
     ]
     数组中每个item均会生成一个input组件，所有input组件的事件全部由form内部进行处理，Items只进行每行input的配置
     type,label,title,placeholder,defaultvalue属性参考Input组件属性
 
     ·name       字段名，产生输入时会作为当前input的键组成一个对象返回
     ·array      仅section类型有效，类似微信section，传入选项
-    ·path       仅select及upload类型有效
-                select若传入path，则会从path中获取当前select的选项并生成为云状标签
-                upload若传入path，则会作为图片服务器地址，图片将会自动上传至path地址并将返回的值作为当前字段的值
     ·selects    仅select类型有效，选项数组
     ·request    验证属性，表示是否必填
     ·check      验证属性，用于特殊字段的验证，如手机号("phone")

@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 11,
 			"list": [
 				{
 					"id": 0,
@@ -95,6 +95,12 @@
 					"id": -1,
 					"name": "list",
 					"pathName": "demo/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "upload",
+					"pathName": "demo/upload/upload",
 					"query": ""
 				}
 			]

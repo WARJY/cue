@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Upload": "/cue/Upload/Upload",
+    "Page": "/cue/Page/Page"
+  },
+  "navigationBarTitleText": "Upload"
+}

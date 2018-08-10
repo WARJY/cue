@@ -1,0 +1,27 @@
+<!-- 
+Upload
+图片上传组件
+
+@properties
+  type(String):
+    上传类型
+      ·default  默认的表单型上传组件
+      full      宽幅的上传组件
+  fields(Array):
+    上传图片对应的字段名
+  value(Object):
+    上传组件的值，字段名为键，图片url为值
+  uploadImg(String):
+    默认图片的url
+  uploadDesc(String):
+    文字描述
+
+@bind
+  upload
+    选择图片后返回图片结果对象，字段名为键，图片url为值
+
+ -->
+
+<Page isShow="{{true}}">
+  <Upload type="full" fields="{{fields}}" bind:upload="handleUpload" />
+</Page>

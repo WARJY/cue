@@ -12,6 +12,7 @@
     "demo/chat/chat",
     "demo/menu/menu",
     "demo/list/list",
+    "demo/upload/upload",
     "cue/Page/Page",
     "cue/AccountPanel/AccountPanel",
     "cue/Input/Input",

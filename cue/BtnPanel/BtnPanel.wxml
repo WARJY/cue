@@ -1,6 +1,0 @@
-<!--Matrix_Wx/BtnPanel/BtnPanel.wxml-->
- 
-<view class='{{currentTheme.className}}' wx:if="{{isshow}}"> 
-<slot></slot>
- </view>
-

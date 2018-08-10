@@ -29,11 +29,11 @@ Component({
     },
     uploadImg:{
       type: String,
-      value: "/res/images/user_card.png"
+      value: "user_card.png"
     },
     uploadDesc:{
       type: String,
-      value: "请保证名片信息清晰可见"
+      value: "请保证图片信息清晰可见"
     }
   },
 
@@ -58,7 +58,7 @@ Component({
       if(val){
         for(let v in val){
           if (val[v] && val[v]!==undefined){
-            ImgList.push(val[v].indexOf("http") === -1 ? app.siteUrl + val[v] : val[v])
+            ImgList.push(val[v])
             successList.push(true)
           }
         }
@@ -71,8 +71,6 @@ Component({
       })
     },
     _chooseImg: function(e) {
-      console.log(this.properties.uploadDesc)
-
       if (!this.data.canChoose) return
       wx.chooseImage({
         count: this.properties.fields.length - this.data.ImgList.length,
@@ -81,16 +79,32 @@ Component({
           let ImgList = this.data.ImgList.concat(imgSrc)
           this.data.ImgList = ImgList
           this.setData({
-            ImgList: ImgList,
-            canChoose: false
+            ImgList: ImgList
           })
-          this.triggerEvent('uploadOn', {
-            field: this.properties.fields[this.data.currentImage]
-          })
+          if (this.properties.path){
+            this.setData({
+              canChoose:false
+            })
+            this.triggerEvent('uploadOn', {
+              field: this.properties.fields[this.data.currentImage]
+            })
+            upload(imgSrc.length)
+          }else{
+            let result = {}
+            let successList = []
+            for (let i in ImgList){
+              result[this.properties.fields[i]]=ImgList[i]
+              successList.push(true)
+            }
+            this.setData({
+              successList: successList
+            })
+            this.triggerEvent('upload', result)
+          }
           let upload = (len) => {
             if (len > 0) {
               wx.uploadFile({
-                url: app.siteUrl + "invoke?method=" + this.properties.path,
+                url: this.properties.path,
                 filePath: this.data.ImgList[this.data.currentImage],
                 name: this.properties.fields[this.data.currentImage],
                 success: (e) => {
@@ -111,7 +125,7 @@ Component({
               this.data.currentImage += 1
             }
           }
-          upload(imgSrc.length)
+          
         }
       })
     },
@@ -136,7 +150,7 @@ Component({
             field: this.properties.fields[index]
           })
           wx.uploadFile({
-            url: app.siteUrl + "invoke?method=" + this.properties.path,
+            url: this.properties.path,
             filePath: imgSrc,
             name: this.properties.fields[index],
             success: (e) => {

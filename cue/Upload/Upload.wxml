@@ -1,4 +1,3 @@
-<!--Matrix_Wx/Upload/Upload.wxml-->
 <block wx:if="{{type=='default'}}">
   <view class='flex-row form-item-upload' style='height: 88rpx;  line-height: 88rpx;padding:0 30rpx;'>
     <view style='flex-grow:1;'>{{title}}</view>
@@ -15,10 +14,7 @@
         </image>
       </view>
       <view wx:if="{{ImgList.length<fields.length }}" class='upload-btn' bindtap='_chooseImg'>
-        
           <image src='camear.png'></image>
-  
-    
       </view>
     </view>
     <view wx:if="{{ fields.length===1}}">
@@ -30,8 +26,6 @@
           <i class='bd  bd-edit'></i>
         </image>
       </view>
-
-
       <view wx:if="{{ImgList.length<fields.length  }}" class='upload-box'>
         <view class='upload-img' bindtap='_chooseImg'>
           <image mode='aspectFill' src="{{uploadImg || 'user_card.png'}}"></image>

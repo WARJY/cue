@@ -8,11 +8,11 @@
     <MInput wx:elif="{{item.type==='textArea'&&!searchDetail}}" title="{{item.title}}" maxLength="{{item.maxLength}}" type="{{item.type}}" label="{{item.label}}" placeholder="{{item.placeholder}}" name="{{item.name}}" value="{{data[item.name]}}" bind:MInput='_handleInput'
       bind:search='_handleInput'/>
     <!-- 上传 -->
-    <upload wx:elif="{{item.type==='upload'}}" type="{{item.showType?item.showType:'default'}}" title="{{item.title||item.placeholder}}" path="{{path +'.upload'}}" fields="{{item.fields}}" bind:uploadOn="_handleUploadOn" bind:upload="_handleUpload" value="{{data[item.name]}}"
+    <upload wx:elif="{{item.type==='upload'}}" type="{{item.showType?item.showType:'default'}}" title="{{item.title||item.placeholder}}" path="{{item.path}}" fields="{{item.fields}}" bind:uploadOn="_handleUploadOn" bind:upload="_handleUpload" value="{{data[item.name]}}"
       uploadImg="{{item.uploadImg}}" uploadDesc="{{item.uploadDesc}}" />
   </block>
   <view style='padding:40rpx;'>
-    <button type='primary' style='background-color:#31c27c;border-radius:0;' form-type='submit'>{{commit_text}}</button>
+    <button type='primary' style='background-color:{{color}};border-radius:0;' form-type='submit'>{{commit_text}}</button>
     <button wx:if="{{cancle_text}}" type='default' bindtap='_goCancle' style='background-color:#31c27c;border-radius:0;'>{{cancle_text}}</button>
   </view>
 </form>

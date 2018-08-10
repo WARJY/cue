@@ -26,7 +26,6 @@ Page({
       placeholder: "请选择",
       name: "InfoTrade",
       request: true,
-      path: '',
       selects: [
         { Id: 1, Name: "IT/互联网" },
         { Id: 2, Name: "主播" },
@@ -62,7 +61,6 @@ Page({
       title: "图片",
       name: "img",
       label: "图片",
-      path: " ",
       fields: ["Image", "Image2", "Image3"],
       count: 1
     }

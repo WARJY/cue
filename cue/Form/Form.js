@@ -82,6 +82,10 @@ Component({
   },
 
   ready: function () {
+    let color = app.color
+    this.setData({
+      color:color
+    })
     let items = {} //参数对象
     let data = {} //绑定数据
     let value = {} //表单数据
@@ -134,25 +138,25 @@ Component({
       }
     }
 
-    this.properties.Items.map(item => {
-      if (item.path && item.type === 'select') {
-        process.push(new Promise((r, j) => {
-          app.post(item.path, {
-            GetCache: true,
-            State: true
-          }).then(data => {
-            this.setData({
-              selects: Object.assign({}, this.data.selects, {
-                [item.name]: data.Items
-              })
-            })
-            r(data)
-          }).catch(e => {
-            j(e)
-          })
-        }))
-      }
-    })
+    // this.properties.Items.map(item => {
+    //   if (item.path && item.type === 'select') {
+    //     process.push(new Promise((r, j) => {
+    //       app.post(item.path, {
+    //         GetCache: true,
+    //         State: true
+    //       }).then(data => {
+    //         this.setData({
+    //           selects: Object.assign({}, this.data.selects, {
+    //             [item.name]: data.Items
+    //           })
+    //         })
+    //         r(data)
+    //       }).catch(e => {
+    //         j(e)
+    //       })
+    //     }))
+    //   }
+    // })
 
     if (process.length > 0) {
       Promise.all(process).then(datas => {
@@ -395,7 +399,7 @@ Component({
     },
     //提交
     _goCommit: function (e) {
-      if (this.data.field != this.data.currentField) return;
+      if (this.data.field !== this.data.currentField && this.data.field !== "") return;
       let result = this._check(e, true); //验证后的值
       console.log(result)
       if (Array.isArray(result)) {
@@ -409,7 +413,6 @@ Component({
       let changed = true;
       if (this.properties.original && this.properties.original.Id > 0) {
         changed = false;
-
         for (let name in result) {
           if (this.properties.original[name] && result[name]) {
             if (Object.prototype.toString.call(result[name]) === '[object Object]') {
@@ -438,16 +441,7 @@ Component({
         this.triggerEvent('formCommit', {
           result: Object.assign(Id, value, params, formId),
           todo: (!this.properties.original || !this.properties.original.Id ? 'Add' : 'Modify')
-        });
-        // app.post(method, Object.assign(Id, value, params, formId), this.properties.autologin).then(data => {
-        //   this.triggerEvent('formCommit', {
-        //     result: data,
-        //     todo: method
-        //   });
-        //   app.updateFormId(formId);
-        // }).catch(e => {
-        //   app.showError(e)
-        // })
+        })
       } else {
         this.triggerEvent('formCommit', {
           result: result,
@@ -456,8 +450,7 @@ Component({
       }
     },
     _handleUploadOn: function (e) {
-      // console.log(e.detail.field)
-      this.imgField = e.detail.field
+      this.data.imgField = e.detail.field
     },
     _handleUpload: function (e) {
       let currentField = ""
@@ -465,7 +458,7 @@ Component({
         currentField = key
       }
       // console.log(currentField + "上传完成")
-      this.currentImgField = currentField
+      this.data.currentImgField = currentField
       this.setData({
         value: Object.assign({}, this.data.value, e.detail)
       })
