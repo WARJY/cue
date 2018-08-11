@@ -1,6 +1,6 @@
 <view class='menu'>
   <view wx:for="{{Items}}" wx:key="{{index}}" class='item' style='width:{{100/cols + "%"}}' data-item="{{item}}" bindtap='_handleMenu'>
-    <image style='{{imgStyle}}' src='{{item.src}}'></image>
-    <view class='title'>{{item.title}}</view>
+    <image class='img' src='{{item.src}}'></image>
+    <view class='ctitle title'>{{item.title}}</view>
   </view>
 </view>

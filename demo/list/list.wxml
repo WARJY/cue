@@ -3,16 +3,31 @@ List
 列表组件
 
 @properties
+  listTitle(String):
+    列表大标题
   type(String):
-    列表类型  @simple：标题列表
+    列表类型  
+      ·default  图文列表
+      ·simple   标题列表
+      ·plus     超级配置列表
   items(Array):
-    配置列表属性，格式如下：
-    [{
-      src: '/images/icon.png',
-      title: '吾之所向，皆浮于空',
-      url: ""
-    }]
+    列表属性，格式如下
+      ·default  图文列表    [{src: '',title: '',content: '',url: ""}]
+      ·simple   标题列表    [{src: '',title: '',url: ""}]
+      ·plus     超级配置列表    
+        [{
+          src: '',                                        图片src
+          title: '',titleP_icon: '',titleP: '',           标题，标题行icon，标题行最右侧文字
+          stitle: '',stitleP_icon: '',stitleP: '',        小标题，小标题行icon，小标题行最右侧文字
+          content: '',contentP_icon: '',contentP: '',     内容，内容行icon，内容行最右侧文字
+          url: ""
+        }]
+      所有属性均为传入则显示，否则不显示
     若传入url则点击后跳转至改url，否则触发回调
+  more(String):
+    查看更多，传入则显示，否则不显示
+  img,title,stitle,content,titleP,stitleP,contentP,more(className)
+    控制对应部分的样式
 
 @bind
   goDetail：
@@ -20,5 +35,7 @@ List
 
  -->
 <Page isShow="{{true}}">
-  <List type="simple" title="祈求者！" items="{{items}}" bind:goDetail="GoDetail" />
+  <List type="default" listTitle="祈求者！" items="{{items}}" bind:goDetail="GoDetail" more="查看更多" />
+  <List type="simple" items="{{itemsSimple}}" bind:goDetail="GoDetail" />
+  <List type="plus" items="{{itemsPlus}}" bind:goDetail="GoDetail" img="img" title="title"/>
 </Page>

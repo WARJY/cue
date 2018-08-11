@@ -13,6 +13,8 @@ AccountPanel
     其他登录方式，格式如下=>logType:[
       { icon："/images/phone.png", text:"手机号码登录/注册", link:"/pages/login/login" }
     ]
+  button(className):
+    控制按钮样式
 
 @bind
   wxLog:
@@ -21,11 +23,10 @@ AccountPanel
     仅获取授权时触发，获取userInfo回调，通过e.detail传入
 
 @tips
-  1.仅需要用户授权时请不要传入wxLog及logType，此时触发userInfo事件
-  2.按钮颜色由app.js中的color属性控制
-  3.微信快捷登录需要获取用户手机号码，并通过code换取openId，所以该接口返回的是微信getPhoneNumber事件
+  仅需要用户授权时请不要传入wxLog及logType，此时触发userInfo事件
+  微信快捷登录需要获取用户手机号码，并通过code换取openId，所以该接口返回的是微信getPhoneNumber事件
 -->
 
 <Page isShow="{{true}}">
-  <AccountPanel showLogin="{{true}}" logoUrl="/images/cue.png" wxLog="微信快捷登录" logType="{{logType}}" bind:wxLog="handleWxLog" bind:userInfo="handleUserInfo" />
+  <AccountPanel showLogin="{{true}}" logoUrl="/images/cue.png" wxLog="微信快捷登录" logType="{{logType}}" bind:wxLog="handleWxLog" bind:userInfo="handleUserInfo" button="button" />
 </Page>

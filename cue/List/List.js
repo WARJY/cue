@@ -1,11 +1,12 @@
-Page({})
+let app = getApp()
 Component({
+  externalClasses: ['img','title','stitle','content','titleP','stitleP','contentP','more'],
   properties: {
     type: {
       type: String,
       value: 'text'
     },
-    title: {
+    listTitle: {
       type: String,
       value: ''
     },
@@ -23,8 +24,13 @@ Component({
     }
   },
 
-  data: {
-
+  ready:function(){
+    if(app.color){
+      let color = app.color
+      this.setData({
+        color: color
+      })
+    }
   },
 
   methods: {

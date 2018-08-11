@@ -1,6 +1,7 @@
 let app = getApp()
 
 Component({
+  externalClasses: ['button'],
   /**
    * 组件的属性列表
    */
@@ -27,7 +28,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    showInfo: true
+    showInfo: true,
+    color:"#199ed8"
   },
 
   /**
@@ -48,9 +50,11 @@ Component({
     //     color: color
     //   })
     // }
-    this.setData({
-      color:app.color
-    })
+    if(app.color){
+      this.setData({
+        color:app.color
+      })
+    }
   },
 
   methods: {

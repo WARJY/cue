@@ -5,31 +5,20 @@ Menu
 @properties
   cols(Number):
     表示一行有多少个按钮
-A
-Menu
-按钮组菜单组件
-
-@properties
-  cols(Number):
-    表示一行有多少个按钮
-  image(Object):
-    按钮图标样式，必须定义图片的宽高，如：
-    image:{
-      width: "120rpx",
-      height: "120rpx"
-    }
   Items(Array):
     按钮图片数组，依次排列，如：
     Items:[
       { src: "/images/1.png", title: "按钮", url: "" }
     ]
     若传入url，则点击后自动跳转，否则触发事件回调
-  
+  img,title(className)
+    控制img及title的样式
+
 @bind
   next：
     点击按钮后的回调，按钮数据通过e.detail返回
 
  -->
 <Page isShow="{{true}}">
-  <Menu cols="{{4}}" image="{{image}}" Items="{{Items}}" bind:next="handleNext"/>
+  <Menu cols="{{4}}" img="img" Items="{{Items}}" bind:next="handleNext"/>
 </Page>

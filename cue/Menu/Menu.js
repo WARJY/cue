@@ -1,4 +1,5 @@
 Component({
+  externalClasses: ['img'],
   properties: {
     cols:{
       type:Number,

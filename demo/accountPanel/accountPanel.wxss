@@ -1,1 +1,4 @@
 /* demo/accountPanel/accountPanel.wxss */
+.button{
+  background-color: #199ed8
+}
